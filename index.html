@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>长沙宝子避坑指南 v2 · 本地佬挤水版</title>
+<style>
+  :root {
+    --red: #D63031;
+    --red-deep: #A82424;
+    --ink: #1A1A1A;
+    --cream: #FAF6F0;
+    --beige: #F1EAD9;
+    --gold: #C8A24A;
+    --grey: #6B7280;
+    --grey-light: #E5E7EB;
+    --green: #2F7D5B;
+    --yellow: #E5A100;
+    --shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "辣";
+    position: absolute;
+    right: -20px; top: -40px;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+  .hero .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+  .hero .sub { font-size: 15px; opacity: 0.92; line-height: 1.8; max-width: 720px; }
+  .hero .meta { margin-top: 18px; font-size: 13px; opacity: 0.75; }
+  .hero .v2 {
+    display: inline-block;
+    background: var(--gold);
+    color: #1a1a1a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 5px solid var(--red);
+    line-height: 1.3;
+  }
+  h2 .h2-sub { font-size: 13px; font-weight: 400; color: var(--grey); margin-left: 10px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 12px; }
+
+  .overview {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .overview p { margin-bottom: 12px; }
+  .overview p:last-child { margin-bottom: 0; }
+  .overview .quote {
+    border-left: 3px solid var(--gold);
+    padding: 6px 14px;
+    background: var(--beige);
+    border-radius: 4px;
+    font-size: 14px;
+    color: #5a4a20;
+  }
+  .overview .exclude {
+    background: #fff3f3;
+    border-left: 3px solid var(--red);
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #7a1818;
+    margin-top: 14px;
+  }
+
+  .pyramid { display: grid; gap: 8px; margin: 16px 0; }
+  .pyramid-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .pyramid-row .label { width: 80px; font-size: 16px; font-weight: 800; }
+  .pyramid-row .count { margin-left: auto; opacity: 0.85; font-weight: 500; font-size: 13px; }
+  .pyramid-row .desc { opacity: 0.95; font-weight: 400; font-size: 13px; }
+  .row-s { background: linear-gradient(90deg, #b8860b, var(--gold)); }
+  .row-a { background: linear-gradient(90deg, var(--red-deep), var(--red)); }
+  .row-b { background: linear-gradient(90deg, #6b7d3f, #8fa653); }
+  .row-c { background: linear-gradient(90deg, #8a6648, #a87f5b); }
+  .row-d { background: linear-gradient(90deg, #444, #6b7280); }
+  .row-x { background: linear-gradient(90deg, #5a1818, #8a2a2a); }
+
+  /* 盟重答疑专章 */
+  .deep-dive {
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    color: #f5f5f5;
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+  }
+  .deep-dive .dd-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #1a1a1a;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .deep-dive h3 { color: #fff; font-size: 19px; margin-bottom: 6px; margin-top: 0; }
+  .deep-dive .dd-sub { color: #c0c0c0; font-size: 13px; margin-bottom: 18px; }
+  .deep-dive ol { padding-left: 22px; margin-bottom: 16px; }
+  .deep-dive ol li { margin-bottom: 10px; line-height: 1.7; }
+  .deep-dive ol li strong { color: var(--gold); }
+  .deep-dive .dd-conclusion {
+    background: rgba(216, 48, 49, 0.18);
+    border-left: 3px solid var(--red);
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--grey-light);
+    transition: transform 0.15s;
+  }
+  .card:hover { transform: translateX(2px); }
+  .card.tier-s { border-left-color: var(--gold); }
+  .card.tier-a { border-left-color: var(--red); }
+  .card.tier-b { border-left-color: #8fa653; }
+  .card.tier-c { border-left-color: #a87f5b; }
+  .card.tier-d { border-left-color: var(--grey); }
+  .card.tier-x { border-left-color: #5a1818; }
+
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .card-head .name { font-size: 17px; font-weight: 800; }
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+  }
+  .badge-s { background: var(--gold); }
+  .badge-a { background: var(--red); }
+  .badge-b { background: #8fa653; }
+  .badge-c { background: #a87f5b; }
+  .badge-d { background: var(--grey); }
+  .badge-q { background: #8b7caf; }
+  .badge-x { background: #5a1818; }
+
+  .meta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 10px;
+  }
+  .meta-row .stars { color: var(--yellow); letter-spacing: 1px; }
+  .meta-row .cat { background: var(--beige); padding: 1px 8px; border-radius: 100px; color: #7a5a1a; }
+
+  .comment {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .tip {
+    font-size: 13px;
+    background: var(--beige);
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #5a4a20;
+    border-left: 3px solid var(--gold);
+  }
+  .tip.warn { background: #fff3e0; color: #8a4500; border-left-color: var(--yellow); }
+  .tip.danger { background: #ffe8e8; color: #7a1818; border-left-color: var(--red); }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .bonus-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--green);
+  }
+  .bonus-card .b-name { font-weight: 800; font-size: 15px; margin-bottom: 6px; color: var(--green); }
+  .bonus-card .b-desc { font-size: 13px; color: #444; }
+
+  .route {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 28px;
+    box-shadow: var(--shadow);
+  }
+  .route-day { margin-bottom: 22px; }
+  .route-day:last-child { margin-bottom: 0; }
+  .route-day h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .timeline { list-style: none; padding-left: 8px; }
+  .timeline li {
+    position: relative;
+    padding: 6px 0 6px 24px;
+    font-size: 14px;
+    border-left: 2px dotted var(--grey-light);
+    margin-left: 6px;
+  }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -7px; top: 14px;
+    width: 12px; height: 12px;
+    background: var(--red);
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  .timeline .t-time {
+    font-weight: 700;
+    color: var(--red-deep);
+    margin-right: 8px;
+  }
+
+  .footer {
+    text-align: center;
+    color: var(--grey);
+    font-size: 12px;
+    margin-top: 40px;
+    line-height: 1.8;
+  }
+
+  .summary-table {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .summary-table th, .summary-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey-light);
+  }
+  .summary-table th {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table .verdict-yes { color: var(--green); font-weight: 700; }
+  .summary-table .verdict-mid { color: var(--yellow); font-weight: 700; }
+  .summary-table .verdict-no { color: var(--red); font-weight: 700; }
+  .summary-table .row-excluded { background: #fafafa; color: #999; }
+  .summary-table .row-excluded td { text-decoration: line-through; }
+  .summary-table .row-excluded .verdict-no { text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 24px; }
+    .container { padding: 18px 14px 60px; }
+    .pyramid-row .label { width: 60px; font-size: 14px; }
+    .pyramid-row .desc { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <span class="tag">LOCAL · NO BS · 2026/05</span><span class="v2">v2 已剔除踩雷店</span>
+  <h1>长沙宝子避坑指南<br>—— G 老师 30 选, 本地佬挤水版 🌶️</h1>
+  <p class="sub">v2 版本根据宝子反馈做了三件事: ① 撤掉<strong>盟重烧烤</strong>(踩雷店, 增加"为什么这么多人吹"专章揭密) ② 删掉<strong>文和友</strong>(已去过) ③ 补漏区移除<strong>湖南博物院/岳麓山/橘子洲</strong>等已去过的目的地, 改推真本地夜宵 + 小酒馆。</p>
+  <p class="meta">📍 起点: 五一广场 · 🕒 报告日期: 2026-05-26 · 🎯 受众: 不是第一次来长沙 / 想看真本地视角的宝子</p>
+</div>
+
+<!-- 总评 -->
+<section>
+  <h2>🧭 一句话总评 <span class="h2-sub">v2 结论</span></h2>
+  <div class="overview">
+    <p><strong>整体打分: 28 个有效条目里 7 个 S 级闭眼冲, 9 个 A 级值得专程, 5 个 B 级顺路, 3 个 C 级谨慎, 4 个本地佬没听过需自查。另外 2 个(盟重/文和友)已根据宝子反馈剔除。</strong></p>
+    <p>G 老师做得对的部分: <strong>南门口苍蝇馆 + 巴赫西点 + 茶颜悦色</strong>这套配置很对味, 是真本地吃喝路径。</p>
+    <p>需要拉回的部分: ① <strong>"35 分钟车程"反复破坏</strong>(铁炉寺工作日打车要 50 分钟); ② <strong>把茶颜悦色推两次、五一广场和万达凑数</strong>明显凑 30; ③ <strong>烧烤推了盟重</strong>——这是种草号的标准答案, 但实际品控早就崩了, 本地真烧烤老炮认五娭毑/哥老倌/任氏。</p>
+    <div class="quote">📌 核心建议: G 老师 30 选实际可用 ~22 个, 加上我替换的本地烧烤 + 小酒馆 + 夜宵补充, 凑成"高浓度 25 选"。详见下方分级和动线。</div>
+    <div class="exclude">🚫 <strong>已根据反馈排除(不再出现在动线里):</strong> 湖南博物院、岳麓山、岳麓书院、橘子洲、文和友、盟重烧烤。这些要么去过, 要么踩过雷。</div>
+  </div>
+</section>
+
+<!-- 盟重答疑专章 -->
+<section>
+  <h2>🔎 盟重为什么这么多人吹? <span class="h2-sub">宝子点的题, 运营老司机视角</span></h2>
+  <div class="deep-dive">
+    <span class="dd-tag">特别答疑 · 营销机制解剖</span>
+    <h3>盟重烧烤 = 被算法养着的品牌资产, 不是被味道养着的店</h3>
+    <p class="dd-sub">宝子反馈"烤串都是冷的, 量也小", 这不是个例, 是结构性问题。我拆给你看:</p>
+    <ol>
+      <li><strong>早期口碑底子是真的</strong>: 2010 年代芙蓉广场附近的老盟重, 大份猛火, 真本地饕客认可。这是品牌资产的起点。</li>
+      <li><strong>抖音 / 小红书算法放大</strong>: 2020 年后短视频起来, "长沙夜宵江湖"成为旅游标签, 盟重靠<strong>老板娘人设 + 排队画面 + 江湖气场地</strong>在算法里反复曝光, 占据了"长沙烧烤"心智第一位。</li>
+      <li><strong>加盟扩张稀释品控</strong>: 分店越开越多, 每店烤功 / 食材 / 出餐速度全部打折, 但流量仍集中在"盟重"这个品牌名下。你吃的高正街店和别人吹的可能不是同一家。</li>
+      <li><strong>种草号互抄作业</strong>: "长沙必吃榜""一日吃遍长沙"账号几十个, 盟重是固定位。你刷十篇有八篇提它, 错觉就是"全国都说好"。</li>
+      <li><strong>"烤串冷"是旺店降本通病</strong>: 高峰期出餐压力大, 流水线<strong>大批预烤 → 盐池保温 → 等单时二次出餐</strong>, 自然冷。这不是某一晚的失误, 是 SOP。</li>
+      <li><strong>本地老吃家早撤了</strong>: 老炮儿换去了五娭毑、哥老倌、任氏。剩下的评价池主要是游客 + 第一次来的本地年轻人, 没参照系, 高分继续被刷。</li>
+    </ol>
+    <div class="dd-conclusion">💡 <strong>结论:</strong> 你踩雷不是你"运气不好", 而是这家店的<strong>"种草曝光率" ≫ "实际出品质量"</strong>。下次遇到类似套路(老板娘人设 + 江湖气装修 + 排队画面 + 几十个种草号同口径吹), 直接降级处理就行。本地真烧烤推荐见下面的"S 级替补区"。</div>
+  </div>
+</section>
+
+<!-- 评级金字塔 -->
+<section>
+  <h2>📊 评级金字塔 <span class="h2-sub">v2 分布</span></h2>
+  <div class="pyramid">
+    <div class="pyramid-row row-s"><span class="label">S 级</span><span class="desc">闭眼冲 · 来长沙不去会后悔</span><span class="count">7 个</span></div>
+    <div class="pyramid-row row-a"><span class="label">A 级</span><span class="desc">值得专程一去 · 本地认可</span><span class="count">9 个</span></div>
+    <div class="pyramid-row row-b"><span class="label">B 级</span><span class="desc">顺路打卡 · 分人分情况</span><span class="count">5 个</span></div>
+    <div class="pyramid-row row-c"><span class="label">C 级</span><span class="desc">已网红化 · 谨慎 / 避坑</span><span class="count">3 个</span></div>
+    <div class="pyramid-row row-d"><span class="label">存疑</span><span class="desc">本地佬没听过, 出发前自查</span><span class="count">4 个</span></div>
+    <div class="pyramid-row row-x"><span class="label">已剔除</span><span class="desc">宝子反馈 / 已去过 / 踩雷</span><span class="count">2 个</span></div>
+  </div>
+</section>
+
+<!-- S 级 -->
+<section>
+  <h2>🥇 S 级 · 闭眼冲 <span class="h2-sub">本地人也常去, 来长沙不去就亏</span></h2>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">天宝兄弟 (小龙虾)</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">夜宵 / 龙虾</span><span>5月底-9月最佳, 现在正季</span></div>
+    <div class="comment">长沙小龙虾连锁里口碑最稳的之一, 口味虾 + 蒜蓉虾尾各来一份, 罗氏虾看心情。</div>
+    <div class="tip">⚠️ 排队是日常, 下午 5 点前到, 或 9 点后冲。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">娟娟餐馆</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">苍蝇馆 / 家常湘菜</span></div>
+    <div class="comment">苍蝇馆界天花板。老板娘根据口味推荐这事是真的, 但记住一条: <strong>主动跟老板娘说"我不能吃太辣"她才会收手</strong>, 否则按本地人辣度上, 第一口你会怀疑人生。</div>
+    <div class="tip">招牌: 农家小炒肉、剁椒鱼头、香干回锅肉。两人 ¥120 上下。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">巴赫西点 (Bach)</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">烘焙 / 德式</span></div>
+    <div class="comment">长沙烘焙天花板, 德国师傅, 法棍 / 碱水结 / 全麦欧包都是硬通货。这家是真"对标高品质审美", 不是 G 老师吹的。</div>
+    <div class="tip warn">⚠️ G 老师写"湘春巷"我存疑, 大概率是<strong>湘春路</strong>方向(开福区), 出门请用地图实时定位。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">茶颜悦色 (任选一家)</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">奶茶 / 长沙特产</span></div>
+    <div class="comment">来长沙必喝。幽兰拿铁、声声乌龙、桂花弄是新人三件套。G 老师把"黄兴中路店"和"人民东路店"分两条推, 纯凑数, 哪家近喝哪家。</div>
+    <div class="tip">🍵 进阶: 试茶颜系子品牌 <strong>古德墨柠</strong>(柠檬茶) 和 <strong>鸳央咖啡</strong>(中式咖啡), 排队少、出片高级。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">开福寺</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">古刹 / 市内</span></div>
+    <div class="comment">市区最方便的千年古刹, 五一广场打车 15 分钟。<strong>素面 ¥10 一碗</strong>, 加 ¥5 素菜, 性价比拉满。</div>
+    <div class="tip">早上 8 点前到最舒服, 工作日完全静。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">夏记粉店 (观音井)</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">早餐 / 米粉</span></div>
+    <div class="comment">藏巷子里的肉丝粉肉丸粉天花板, 汤是老底子。</div>
+    <div class="tip">⏰ 7-9 点最热闹, 10 点半基本卖完。口诀: "肉丝肉丸双码, 干挑, 加蛋, 多加葱"。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">公交新村粉店</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">早餐 / 米粉</span></div>
+    <div class="comment">真本地老粉店, 雪里蕻和干豆角配菜是灵魂。和夏记二选一, 一次嗦两家会撑死。</div>
+  </div>
+</section>
+
+<!-- S 级烧烤替补区 -->
+<section>
+  <h2>🔥 S 级替补 · 烧烤本地真香榜 <span class="h2-sub">替代盟重的三家</span></h2>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">五娭毑烧烤</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">夜宵 / 老牌烧烤</span></div>
+    <div class="comment">长沙真烧烤老炮认的第一档之一。烤茄子、烤韭菜、烤鸡翅是基本盘, 现烤现上, 不存在"预烤等单"。门店比盟重朴素, 但出品在线。</div>
+    <div class="tip warn">⚠️ "五娭毑"在长沙有几家分店, 名字相似的也有(都喜欢用"娭毑"二字), 选评价稳定的老店, 别冲新分店。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">哥老倌烧烤</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">夜宵 / 江湖老店</span></div>
+    <div class="comment">长沙夜宵老江湖, 烤生蚝、烤鱼、烤茄子稳定输出。环境一样有点糙, 但味道是真的。</div>
+    <div class="tip">本地人吃烧烤心理价位 ¥80-120 / 人。如果一家烧烤人均冲 ¥200, 大概率是流量店。</div>
+  </div>
+
+  <div class="card tier-s">
+    <div class="card-head"><span class="name">任氏烧烤</span><span class="badge badge-s">S</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">夜宵 / 老牌</span></div>
+    <div class="comment">老底子, 本地人评价稳定。和五娭毑、哥老倌组成"本地烧烤老炮三件套"。三家随便挑一家, 都比再去一次盟重靠谱。</div>
+    <div class="tip warn">⚠️ 出发前用大众点评搜近 1 个月评价做最终判断, 长沙烧烤店换厨子 / 换分店, 品控会有波动。</div>
+  </div>
+</section>
+
+<!-- A 级 -->
+<section>
+  <h2>🥈 A 级 · 值得专程去 <span class="h2-sub">G 老师选得不错, 我加点 context</span></h2>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">上碧湘街 + 南门口</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">市井早市 / Citywalk</span></div>
+    <div class="comment">G 老师"八大局平替"那个比喻牵强, 但<strong>南门口确实是长沙市井灵魂</strong>。上碧湘街只是其中一段, 配套<strong>南门口德园包子、向群锅饺、四娭毑臭豆腐</strong>才完整。</div>
+    <div class="tip">早上 7-10 点去最对味, 中午就散了。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">肆姐面粉 (原味面粉馆)</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">早餐 / 米粉</span></div>
+    <div class="comment">长沙比较知名的粉店, 牛肉粉扎实, 但已经偏游客化, 排队比夏记长。</div>
+    <div class="tip">嗦粉只有一次机会, 我优先夏记 / 公交新村。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">鲁哥饭店</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">苍蝇馆 / 家常湘菜</span></div>
+    <div class="comment">咸蛋黄茄子、白辣椒炒肉真的下饭。和娟娟二选一: 娟娟更"猛", 鲁哥更"家"。</div>
+    <div class="tip">两个都想去? 一个午饭一个晚饭, 别同一天连吃。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">潮宗街</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">Citywalk / 历史街区</span></div>
+    <div class="comment">长沙仅存的几条石板老街之一, 改造克制, 民国建筑 + 独立咖啡 + 买手店密度高。工作日尤其舒服。</div>
+    <div class="tip">配<strong>金九福、贺龙故居、潮宗街教堂</strong>串起来, 一两个小时正好。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">苏家巷 + 丰盈西里</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">Citywalk / 买手店</span></div>
+    <div class="comment">挨着的两个巷子, <strong>长沙真正的"梧桐区平替"</strong>。古着、香氛、独立设计品牌密度高, 尺度宜人。</div>
+    <div class="tip">下午 3-6 点光线最好。很多小店周一闭店。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">铁炉寺</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">古刹 / 清幽</span></div>
+    <div class="comment">真清幽, 没游客团。但<strong>位置在岳麓区西北边</strong>, 从五一广场打车 40-50 分钟。G 老师"35 分钟内"在这条不成立。</div>
+    <div class="tip warn">⚠️ 既然宝子已去过岳麓山, 铁炉寺单独跑一趟性价比下降。可以工作日上午专程去, 拍照 + 静坐 1.5 小时就回。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">金色印象足浴</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">放松 / 足疗</span></div>
+    <div class="comment">长沙足浴是真本地名片, 全国卷不过。金色印象是稳定第一梯队, "爱马仕"有点过誉但确实好。</div>
+    <div class="tip">2-3 小时套餐 ¥200-300, 含自助晚餐。<strong>放在白天暴走后的晚上躺平最爽</strong>。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">黑色经典臭豆腐</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">小吃 / 连锁</span></div>
+    <div class="comment">连锁但品质稳定, 五一广场到处是分店。本地人更认<strong>四娭毑臭豆腐</strong>。</div>
+    <div class="tip">"路过随手吃一份"OK, 不必专门排队。</div>
+  </div>
+
+  <div class="card tier-a">
+    <div class="card-head"><span class="name">荷花池生鲜市场</span><span class="badge badge-a">A</span></div>
+    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">早市 / 市井</span></div>
+    <div class="comment">真菜市场。作为外地宝子, <strong>主要价值是"看"</strong>, 你又不带菜回去。葱油粑粑糖油粑粑周边推车摊更香。</div>
+  </div>
+</section>
+
+<!-- B 级 -->
+<section>
+  <h2>🌿 B 级 · 顺路打卡 <span class="h2-sub">不专程, 路过看一眼</span></h2>
+
+  <div class="card tier-b">
+    <div class="card-head"><span class="name">白沙古井</span><span class="badge badge-b">B</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">地标 / 文化</span></div>
+    <div class="comment">"本地人提桶打水"是真的, 凌晨 5 点就有人。但景点价值有限, <strong>看一眼井, 拍张照, 20 分钟够了</strong>。</div>
+    <div class="tip">不专门玩泡茶可以跳。住五一广场打车 10 分钟。</div>
+  </div>
+
+  <div class="card tier-b">
+    <div class="card-head"><span class="name">太平老街</span><span class="badge badge-b">B</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">老街 / 已商业化</span></div>
+    <div class="comment">紧贴五一广场必经过。"深巷藏茶室工作室"是真的, 但主街已经是<strong>奶茶炸串卤鸡爪一条街</strong>。</div>
+    <div class="tip">晚上灯光起来看一眼, 别在主街吃饭。</div>
+  </div>
+
+  <div class="card tier-b">
+    <div class="card-head"><span class="name">坡子街 (+ 火宫殿)</span><span class="badge badge-b">B</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">老街 / 旅游团</span></div>
+    <div class="comment">主街商业化严重, 但<strong>火宫殿值得进去一次</strong>——八大小吃集合, 臭豆腐 / 糖油粑粑 / 姊妹团子一次吃完, 适合时间紧的宝子。</div>
+    <div class="tip">人均 ¥60-80, 别点炒菜, 就吃小吃拼盘。</div>
+  </div>
+
+  <div class="card tier-b">
+    <div class="card-head"><span class="name">五一广场</span><span class="badge badge-b">B</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">地标 / 住宿地</span></div>
+    <div class="comment">你住的地方, 不算景点, G 老师凑数嫌疑。但晚上人潮值得看一眼。</div>
+    <div class="tip">想看夜景推荐<strong>IFS 大楼楼顶 KAWS 大公仔</strong>, 真打卡点。</div>
+  </div>
+
+  <div class="card tier-b">
+    <div class="card-head"><span class="name">黄兴南路步行街</span><span class="badge badge-b">B</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">商业街</span></div>
+    <div class="comment">普通步行街, 但从五一广场往坡子街走必经, 顺路扫一眼即可。</div>
+  </div>
+</section>
+
+<!-- C 级 -->
+<section>
+  <h2>🚧 C 级 · 谨慎 / 避坑 <span class="h2-sub">已网红化, 性价比拉跨</span></h2>
+
+  <div class="card tier-c">
+    <div class="card-head"><span class="name">万达广场 (中山路)</span><span class="badge badge-c">C</span></div>
+    <div class="meta-row"><span class="stars">★★☆☆☆</span><span class="cat">商场 / 地名存疑</span></div>
+    <div class="comment"><strong>地名疑似有误。</strong>长沙市内主要万达广场在开福区(秀峰万达)和岳麓区, 中山路一带主要商业体是 <strong>IFS / 平和堂 / 王府井 / 海信广场</strong>。"中山路万达"我作为本地人没印象。</div>
+    <div class="tip warn">⚠️ 想吹空调进商场, 直接去 <strong>IFS</strong>(顶层 KAWS 网红打卡点), 比"中山路万达"明确得多。</div>
+  </div>
+
+  <div class="card tier-c">
+    <div class="card-head"><span class="name">茶颜悦色 人民东路店 (重复推荐)</span><span class="badge badge-c">C</span></div>
+    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">凑数 / 重复</span></div>
+    <div class="comment">G 老师把茶颜悦色推两次明显凑数。茶颜悦色在长沙有 <strong>500+ 家店</strong>, 走 200 米必有一家。直接划掉。</div>
+  </div>
+
+  <div class="card tier-c">
+    <div class="card-head"><span class="name">坡子街 (单独评)</span><span class="badge badge-c">C</span></div>
+    <div class="meta-row"><span class="stars">★★☆☆☆</span><span class="cat">老街 / 商业化</span></div>
+    <div class="comment">已在 B 级出现。整体老街过度旅游化, 仅推荐进火宫殿一次。</div>
+  </div>
+</section>
+
+<!-- 存疑 -->
+<section>
+  <h2>❓ 存疑 / 待核实 <span class="h2-sub">本地佬没听过, 不是说不好, 是没流量验证</span></h2>
+
+  <div class="card tier-d">
+    <div class="card-head"><span class="name">WITH KAFE / 浅印咖啡馆 / Double L Cafe</span><span class="badge badge-q">存疑</span></div>
+    <div class="comment">长沙独立咖啡确实卷, G 老师推这三家我没听过, 但不一定差。<strong>去之前用大众点评 / 小红书搜近 3 个月评价</strong>。</div>
+    <div class="tip warn">替代: 长沙我个人推荐<strong>「鸳央咖啡」(茶颜系) 和「Manner」</strong>, 至少品质有底。</div>
+  </div>
+
+  <div class="card tier-d">
+    <div class="card-head"><span class="name">松柏寺</span><span class="badge badge-q">存疑</span></div>
+    <div class="comment">长沙以"开福寺、麓山寺、铁炉寺"三寺最知名, "松柏寺"我没印象, G 老师这条可能爬来没核实。</div>
+    <div class="tip warn">想清幽古刹去<strong>麓山寺(岳麓山半山腰)</strong>或<strong>开元寺</strong>, 比"松柏寺"靠谱。但宝子既已去过岳麓山, 麓山寺等于已经路过。</div>
+  </div>
+</section>
+
+<!-- 已剔除 -->
+<section>
+  <h2>🚫 已剔除 <span class="h2-sub">根据宝子反馈, 不再推荐</span></h2>
+
+  <div class="card tier-x">
+    <div class="card-head"><span class="name">盟重烧烤 (踩雷)</span><span class="badge badge-x">剔除</span></div>
+    <div class="comment">宝子已去过, 反馈"烤串都是冷的, 量也小"。详细营销机制解剖见上方"特别答疑"专章。<strong>替代方案: S 级替补区的五娭毑 / 哥老倌 / 任氏。</strong></div>
+  </div>
+
+  <div class="card tier-x">
+    <div class="card-head"><span class="name">文和友老长沙龙虾馆 (已去过)</span><span class="badge badge-x">剔除</span></div>
+    <div class="comment">宝子已去过, 不重复推荐。本地真龙虾去天宝兄弟。</div>
+  </div>
+</section>
+
+<!-- 补漏 -->
+<section>
+  <h2>🎁 真本地补漏 <span class="h2-sub">已剔除宝子去过的省博/岳麓山/橘子洲, 只留没去过的</span></h2>
+
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <div class="b-name">化龙池 / 都正街</div>
+      <div class="b-desc">长沙小酒馆一条街, 民谣 / 摇滚现场氛围拉满。<strong>晚上 9 点后开始热闹</strong>, 比"网红酒吧街"真实十倍。距五一广场步行 15 分钟。</div>
+    </div>
+    <div class="bonus-card">
+      <div class="b-name">蔡锷北路宵夜一条街</div>
+      <div class="b-desc">长沙真夜宵江湖。凌晨 2 点炒码炒粉炒饭一条街还在排队。补"龙虾 + 烧烤"之外的另一种夜宵打开方式。</div>
+    </div>
+    <div class="bonus-card">
+      <div class="b-name">IFS 大楼顶 KAWS 雕塑</div>
+      <div class="b-desc">五一广场地标, 楼顶巨型 KAWS 雕塑出片神器。傍晚去拍夕阳 + 灯光起来后一并解决。免费。</div>
+    </div>
+    <div class="bonus-card">
+      <div class="b-name">四娭毑臭豆腐</div>
+      <div class="b-desc">本地老炮认的臭豆腐, 比黑色经典更"老底子"。多在南门口 / 老街附近, 找推车招牌。</div>
+    </div>
+    <div class="bonus-card">
+      <div class="b-name">梅溪湖艺术中心 (扎哈作品)</div>
+      <div class="b-desc">扎哈·哈迪德设计, 三个白色花瓣建筑。如果你对建筑 / 摄影感兴趣, 比国金中心更值得专程。打车 25 分钟。</div>
+    </div>
+    <div class="bonus-card">
+      <div class="b-name">渔人码头 / 后湖艺术区</div>
+      <div class="b-desc">长沙小众艺术区, 文创园 + 独立工作室 + 江边视野。比文和友真实, 适合喜欢逛"未完成"街区的宝子。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 速查表 -->
+<section>
+  <h2>📋 30 选速查表 v2 <span class="h2-sub">已标注剔除项</span></h2>
+  <table class="summary-table">
+    <thead>
+      <tr><th>#</th><th>地点</th><th>分类</th><th>等级</th><th>是否值得去</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>荷花池生鲜市场</td><td>早市</td><td>A</td><td class="verdict-yes">值得 (看)</td></tr>
+      <tr><td>2</td><td>上碧湘街 + 南门口</td><td>市井</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>3</td><td>夏记粉店</td><td>米粉</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>4</td><td>肆姐面粉</td><td>米粉</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>5</td><td>公交新村粉店</td><td>米粉</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>6</td><td>黑色经典臭豆腐</td><td>小吃</td><td>A</td><td class="verdict-mid">顺路吃</td></tr>
+      <tr><td>7</td><td>天宝兄弟龙虾</td><td>夜宵</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>8</td><td>娟娟餐馆</td><td>苍蝇馆</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>9</td><td>鲁哥饭店</td><td>苍蝇馆</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr class="row-excluded"><td>10</td><td>盟重烧烤</td><td>夜宵</td><td>—</td><td class="verdict-no">已剔除 (踩雷)</td></tr>
+      <tr class="row-excluded"><td>11</td><td>文和友龙虾馆</td><td>网红</td><td>—</td><td class="verdict-no">已剔除 (去过)</td></tr>
+      <tr><td>12</td><td>巴赫西点</td><td>烘焙</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>13</td><td>茶颜悦色 黄兴中路店</td><td>奶茶</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>14</td><td>茶颜悦色 人民东路店</td><td>奶茶</td><td>C</td><td class="verdict-no">重复, 跳</td></tr>
+      <tr><td>15</td><td>WITH KAFE</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
+      <tr><td>16</td><td>浅印咖啡馆</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
+      <tr><td>17</td><td>Double L Cafe</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
+      <tr><td>18</td><td>潮宗街</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>19</td><td>苏家巷</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>20</td><td>丰盈西里</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>21</td><td>太平老街</td><td>老街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
+      <tr><td>22</td><td>坡子街 + 火宫殿</td><td>老街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
+      <tr><td>23</td><td>黄兴南路步行街</td><td>商业街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
+      <tr><td>24</td><td>开福寺</td><td>古刹</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
+      <tr><td>25</td><td>铁炉寺</td><td>古刹</td><td>A</td><td class="verdict-yes">值得 (远)</td></tr>
+      <tr><td>26</td><td>松柏寺</td><td>古刹</td><td>?</td><td class="verdict-no">存疑, 换</td></tr>
+      <tr><td>27</td><td>金色印象足浴</td><td>放松</td><td>A</td><td class="verdict-yes">值得</td></tr>
+      <tr><td>28</td><td>白沙古井</td><td>地标</td><td>B</td><td class="verdict-mid">看 20 分钟</td></tr>
+      <tr><td>29</td><td>五一广场</td><td>住宿地</td><td>B</td><td class="verdict-no">凑数</td></tr>
+      <tr><td>30</td><td>万达广场 (中山路)</td><td>商场</td><td>C</td><td class="verdict-no">地名存疑</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 动线建议 v2 -->
+<section>
+  <h2>🗺️ 两日动线 v2 <span class="h2-sub">已避开省博/岳麓山/橘子洲</span></h2>
+  <div class="route">
+
+    <div class="route-day">
+      <h4>Day 1 · 老长沙市井 + 真烧烤夜宵</h4>
+      <ul class="timeline">
+        <li><span class="t-time">07:30</span>夏记粉店嗦肉丝肉丸粉 (¥15)</li>
+        <li><span class="t-time">09:00</span>开福寺烧香 + 吃 ¥10 素面</li>
+        <li><span class="t-time">11:00</span>潮宗街 → 苏家巷 → 丰盈西里 Citywalk, 一杯<strong>鸳央咖啡</strong></li>
+        <li><span class="t-time">13:30</span>娟娟餐馆吃午饭 (告诉老板娘"微辣")</li>
+        <li><span class="t-time">15:30</span>巴赫西点带个法棍 / 碱水结回酒店</li>
+        <li><span class="t-time">16:30</span>回酒店午休 (重要, 晚上要熬)</li>
+        <li><span class="t-time">18:00</span>IFS 顶楼 KAWS 拍照 + 看长沙天际线日落</li>
+        <li><span class="t-time">19:30</span>天宝兄弟杀小龙虾</li>
+        <li><span class="t-time">22:00</span>化龙池 / 都正街小酒馆听民谣</li>
+      </ul>
+    </div>
+
+    <div class="route-day">
+      <h4>Day 2 · 慢节奏 + 替补烧烤雪耻</h4>
+      <ul class="timeline">
+        <li><span class="t-time">08:30</span>公交新村粉店换种粉嗦 (和 Day 1 的夏记对比)</li>
+        <li><span class="t-time">10:00</span>南门口扫荡: 上碧湘街 + 德园包子 + 四娭毑臭豆腐</li>
+        <li><span class="t-time">12:00</span>鲁哥饭店吃午饭 (咸蛋黄茄子 + 白辣椒炒肉)</li>
+        <li><span class="t-time">14:00</span>白沙古井 20 分钟打卡 + 周边茶馆喝杯本地绿茶</li>
+        <li><span class="t-time">15:30</span>梅溪湖艺术中心看扎哈建筑 (或后湖艺术区)</li>
+        <li><span class="t-time">18:00</span>金色印象足浴 + 自助餐 (躺到 21:00)</li>
+        <li><span class="t-time">21:30</span><strong>烧烤雪耻局: 五娭毑 / 哥老倌 / 任氏任选一家</strong></li>
+        <li><span class="t-time">23:30</span>蔡锷北路宵夜街溜达, 看本地夜江湖</li>
+      </ul>
+    </div>
+
+    <div class="route-day">
+      <h4>Day 3 (机动) · 偏远 / 小众补漏</h4>
+      <ul class="timeline">
+        <li><span class="t-time">08:30</span>肆姐面粉牛肉粉 (粉店三连最后一发)</li>
+        <li><span class="t-time">10:00</span>铁炉寺 (清幽 1.5 小时)——如果时间紧可跳</li>
+        <li><span class="t-time">13:00</span>火宫殿小吃拼盘 (赶时间用)</li>
+        <li><span class="t-time">15:00</span>太平老街深巷茶室喝个下午茶</li>
+        <li><span class="t-time">17:00</span>返程</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  ✏️ v2 由本地佬 + 老吃家 + 运营 brain 三合一手写, 已根据宝子反馈剔除踩雷 / 已去店。<br>
+  地点信息以你出发前用地图实时查到的为准, 长沙小店关门 / 搬家很常 (尤其独立咖啡馆和老烧烤店分店)。<br>
+  报告日期: 2026-05-26 v2 · 祝宝子在长沙吃到嗨 🌶️
+</div>
+
+</div>
+</body>
+</html>
