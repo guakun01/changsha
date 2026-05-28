@@ -1,761 +1,1705 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>长沙宝子避坑指南 v2 · 本地佬挤水版</title>
-<style>
-  :root {
-    --red: #D63031;
-    --red-deep: #A82424;
-    --ink: #1A1A1A;
-    --cream: #FAF6F0;
-    --beige: #F1EAD9;
-    --gold: #C8A24A;
-    --grey: #6B7280;
-    --grey-light: #E5E7EB;
-    --green: #2F7D5B;
-    --yellow: #E5A100;
-    --shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    line-height: 1.7;
-    font-size: 15px;
-  }
-  .container { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
+    <meta name="theme-color" content="#b84b31">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <title>宝子的长沙狂欢周末 | 星城烟火之旅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Star City Sunset & Retro Brick Palette */
+            --ink-deep: #1f1412;
+            --ink-medium: #3d2a25;
+            --ink-light: #5c453d;
+            --mist-gray: #8b7d78;
+            --sage-green: #b84b31; /* Replaced with Retro Brick Red */
+            --sage-light: #d67151; /* Replaced with Sunset Orange */
+            --sage-pale: #f2d5c4;  /* Warm Peach */
+            --cream: #fcf6f0;
+            --cream-warm: #faebd9;
+            --gold-accent: #c99353;
+            --gold-bright: #e5b975;
+            --water-blue: #a86b53; /* Replaced with warm terracotta */
+            --water-light: #d6ab9a;
+            --paper: #fbf8f5;
 
-  .hero {
-    background: linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
-    color: #fff;
-    border-radius: 16px;
-    padding: 40px 36px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "辣";
-    position: absolute;
-    right: -20px; top: -40px;
-    font-size: 220px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.06);
-    line-height: 1;
-  }
-  .hero .tag {
-    display: inline-block;
-    background: rgba(255,255,255,0.18);
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
-  }
-  .hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
-  .hero .sub { font-size: 15px; opacity: 0.92; line-height: 1.8; max-width: 720px; }
-  .hero .meta { margin-top: 18px; font-size: 13px; opacity: 0.75; }
-  .hero .v2 {
-    display: inline-block;
-    background: var(--gold);
-    color: #1a1a1a;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 800;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
+            /* Spacing */
+            --xs: 0.25rem;
+            --sm: 0.5rem;
+            --md: 1rem;
+            --lg: 1.5rem;
+            --xl: 2rem;
+            --xxl: 3rem;
+        }
 
-  section { margin-bottom: 40px; }
-  h2 {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 18px;
-    padding-left: 14px;
-    border-left: 5px solid var(--red);
-    line-height: 1.3;
-  }
-  h2 .h2-sub { font-size: 13px; font-weight: 400; color: var(--grey); margin-left: 10px; }
-  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 12px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .overview {
-    background: #fff;
-    border-radius: 14px;
-    padding: 28px;
-    box-shadow: var(--shadow);
-  }
-  .overview p { margin-bottom: 12px; }
-  .overview p:last-child { margin-bottom: 0; }
-  .overview .quote {
-    border-left: 3px solid var(--gold);
-    padding: 6px 14px;
-    background: var(--beige);
-    border-radius: 4px;
-    font-size: 14px;
-    color: #5a4a20;
-  }
-  .overview .exclude {
-    background: #fff3f3;
-    border-left: 3px solid var(--red);
-    padding: 10px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #7a1818;
-    margin-top: 14px;
-  }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  .pyramid { display: grid; gap: 8px; margin: 16px 0; }
-  .pyramid-row {
-    display: flex;
-    align-items: center;
-    padding: 10px 16px;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .pyramid-row .label { width: 80px; font-size: 16px; font-weight: 800; }
-  .pyramid-row .count { margin-left: auto; opacity: 0.85; font-weight: 500; font-size: 13px; }
-  .pyramid-row .desc { opacity: 0.95; font-weight: 400; font-size: 13px; }
-  .row-s { background: linear-gradient(90deg, #b8860b, var(--gold)); }
-  .row-a { background: linear-gradient(90deg, var(--red-deep), var(--red)); }
-  .row-b { background: linear-gradient(90deg, #6b7d3f, #8fa653); }
-  .row-c { background: linear-gradient(90deg, #8a6648, #a87f5b); }
-  .row-d { background: linear-gradient(90deg, #444, #6b7280); }
-  .row-x { background: linear-gradient(90deg, #5a1818, #8a2a2a); }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--paper);
+            color: var(--ink-deep);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-  /* 盟重答疑专章 */
-  .deep-dive {
-    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-    color: #f5f5f5;
-    border-radius: 14px;
-    padding: 28px 32px;
-    box-shadow: var(--shadow);
-  }
-  .deep-dive .dd-tag {
-    display: inline-block;
-    background: var(--gold);
-    color: #1a1a1a;
-    padding: 3px 10px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-  .deep-dive h3 { color: #fff; font-size: 19px; margin-bottom: 6px; margin-top: 0; }
-  .deep-dive .dd-sub { color: #c0c0c0; font-size: 13px; margin-bottom: 18px; }
-  .deep-dive ol { padding-left: 22px; margin-bottom: 16px; }
-  .deep-dive ol li { margin-bottom: 10px; line-height: 1.7; }
-  .deep-dive ol li strong { color: var(--gold); }
-  .deep-dive .dd-conclusion {
-    background: rgba(216, 48, 49, 0.18);
-    border-left: 3px solid var(--red);
-    padding: 10px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-top: 14px;
-  }
+        /* Paper Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
 
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px 22px;
-    margin-bottom: 14px;
-    box-shadow: var(--shadow);
-    border-left: 4px solid var(--grey-light);
-    transition: transform 0.15s;
-  }
-  .card:hover { transform: translateX(2px); }
-  .card.tier-s { border-left-color: var(--gold); }
-  .card.tier-a { border-left-color: var(--red); }
-  .card.tier-b { border-left-color: #8fa653; }
-  .card.tier-c { border-left-color: #a87f5b; }
-  .card.tier-d { border-left-color: var(--grey); }
-  .card.tier-x { border-left-color: #5a1818; }
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(180deg,
+                #fadcb3 0%,
+                #f7cd9e 20%,
+                #f2b988 40%,
+                #e89f71 60%,
+                #dca890 75%,
+                var(--cream-warm) 100%
+            );
+            padding-top: 15vh;
+        }
 
-  .card-head {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
-  .card-head .name { font-size: 17px; font-weight: 800; }
-  .badge {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #fff;
-  }
-  .badge-s { background: var(--gold); }
-  .badge-a { background: var(--red); }
-  .badge-b { background: #8fa653; }
-  .badge-c { background: #a87f5b; }
-  .badge-d { background: var(--grey); }
-  .badge-q { background: #8b7caf; }
-  .badge-x { background: #5a1818; }
+        .hero-mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            pointer-events: none;
+        }
 
-  .meta-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    font-size: 12px;
-    color: var(--grey);
-    margin-bottom: 10px;
-  }
-  .meta-row .stars { color: var(--yellow); letter-spacing: 1px; }
-  .meta-row .cat { background: var(--beige); padding: 1px 8px; border-radius: 100px; color: #7a5a1a; }
+        /* 最远层山峰 - 淡墨远景 (Sunset tint) */
+        .karst-far {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70%;
+            opacity: 0.35;
+            filter: blur(2px);
+        }
 
-  .comment {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  .tip {
-    font-size: 13px;
-    background: var(--beige);
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: #5a4a20;
-    border-left: 3px solid var(--gold);
-  }
-  .tip.warn { background: #fff3e0; color: #8a4500; border-left-color: var(--yellow); }
-  .tip.danger { background: #ffe8e8; color: #7a1818; border-left-color: var(--red); }
+        .karst-far::before,
+        .karst-far::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            border-radius: 50% 50% 2% 2% / 70% 70% 2% 2%;
+        }
 
-  .bonus-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-  }
-  .bonus-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 16px 18px;
-    box-shadow: var(--shadow);
-    border-top: 3px solid var(--green);
-  }
-  .bonus-card .b-name { font-weight: 800; font-size: 15px; margin-bottom: 6px; color: var(--green); }
-  .bonus-card .b-desc { font-size: 13px; color: #444; }
+        .karst-mid-far {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 58%;
+            opacity: 0.5;
+        }
 
-  .route {
-    background: #fff;
-    border-radius: 14px;
-    padding: 26px 28px;
-    box-shadow: var(--shadow);
-  }
-  .route-day { margin-bottom: 22px; }
-  .route-day:last-child { margin-bottom: 0; }
-  .route-day h4 {
-    font-size: 16px;
-    font-weight: 800;
-    margin-bottom: 12px;
-    padding: 6px 14px;
-    background: var(--red);
-    color: #fff;
-    border-radius: 6px;
-    display: inline-block;
-  }
-  .timeline { list-style: none; padding-left: 8px; }
-  .timeline li {
-    position: relative;
-    padding: 6px 0 6px 24px;
-    font-size: 14px;
-    border-left: 2px dotted var(--grey-light);
-    margin-left: 6px;
-  }
-  .timeline li::before {
-    content: "";
-    position: absolute;
-    left: -7px; top: 14px;
-    width: 12px; height: 12px;
-    background: var(--red);
-    border-radius: 50%;
-    border: 2px solid #fff;
-  }
-  .timeline .t-time {
-    font-weight: 700;
-    color: var(--red-deep);
-    margin-right: 8px;
-  }
+        .karst-mid {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45%;
+            opacity: 0.7;
+        }
 
-  .footer {
-    text-align: center;
-    color: var(--grey);
-    font-size: 12px;
-    margin-top: 40px;
-    line-height: 1.8;
-  }
+        .karst-near {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 32%;
+            opacity: 0.85;
+        }
 
-  .summary-table {
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  .summary-table th, .summary-table td {
-    padding: 10px 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey-light);
-  }
-  .summary-table th {
-    background: var(--ink);
-    color: #fff;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-  }
-  .summary-table tr:last-child td { border-bottom: none; }
-  .summary-table .verdict-yes { color: var(--green); font-weight: 700; }
-  .summary-table .verdict-mid { color: var(--yellow); font-weight: 700; }
-  .summary-table .verdict-no { color: var(--red); font-weight: 700; }
-  .summary-table .row-excluded { background: #fafafa; color: #999; }
-  .summary-table .row-excluded td { text-decoration: line-through; }
-  .summary-table .row-excluded .verdict-no { text-decoration: none; }
+        .karst-close {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            opacity: 0.95;
+        }
 
-  @media (max-width: 640px) {
-    .hero h1 { font-size: 24px; }
-    .container { padding: 18px 14px 60px; }
-    .pyramid-row .label { width: 60px; font-size: 14px; }
-    .pyramid-row .desc { font-size: 11px; }
-  }
-</style>
+        /* 水墨晕染层 */
+        .ink-wash {
+            position: absolute;
+            width: 100%;
+            height: 55%;
+            bottom: 18%;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(255,240,230,0.2) 25%,
+                rgba(250,225,210,0.35) 50%,
+                rgba(255,245,235,0.25) 75%,
+                transparent 100%
+            );
+            pointer-events: none;
+            animation: ink-float 30s ease-in-out infinite;
+        }
+
+        .ink-wash-layer {
+            position: absolute;
+            width: 130%;
+            left: -15%;
+            height: 40%;
+            bottom: 8%;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(235,210,195,0.25) 35%,
+                rgba(245,225,210,0.4) 55%,
+                rgba(252,240,235,0.3) 75%,
+                transparent 100%
+            );
+            pointer-events: none;
+            animation: ink-float 35s ease-in-out infinite reverse;
+        }
+
+        @keyframes ink-float {
+            0%, 100% {
+                transform: translateX(-8%);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateX(8%);
+                opacity: 0.9;
+            }
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: var(--xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--lg);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--sm);
+            padding: var(--sm) var(--lg);
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: rgba(61, 42, 37, 0.9);
+            letter-spacing: 0.15em;
+            animation: fadeInDown 1s ease-out;
+            font-weight: 600;
+        }
+
+        .hero-badge::before,
+        .hero-badge::after {
+            content: '◆';
+            font-size: 0.5rem;
+            color: rgba(184, 75, 49, 0.6);
+        }
+
+        .hero-title {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-weight: 400;
+            color: rgba(43, 27, 24, 0.85);
+            line-height: 1;
+            letter-spacing: 0.08em;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            text-shadow:
+                0 2px 20px rgba(255,255,255,0.7),
+                0 1px 1px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: rgba(61, 42, 37, 0.6);
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: var(--xxl);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--sm);
+            color: var(--sage-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-quick-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: var(--xl);
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-quick-nav a {
+            color: rgba(92, 69, 61, 0.75);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            padding: 4px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.25s ease;
+            font-weight: 500;
+        }
+
+        .hero-quick-nav a:hover {
+            color: var(--sage-green);
+            border-bottom-color: var(--sage-green);
+        }
+
+        .hero-quick-nav span {
+            color: rgba(92, 69, 61, 0.3);
+            font-size: 0.8rem;
+        }
+
+        .hero-nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--sm);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            margin-top: var(--lg);
+        }
+
+        .hero-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--sm);
+            padding: var(--sm) var(--md);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--ink-deep);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .hero-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(184, 75, 49, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(184, 75, 49, 0.15);
+        }
+
+        .hero-nav-btn .nav-day {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, rgba(184, 75, 49, 0.8), rgba(214, 113, 81, 0.8));
+            color: white;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .hero-nav-btn:hover .nav-day {
+            background: linear-gradient(135deg, var(--sage-green), var(--sage-light));
+        }
+
+        .hero-nav-btn .nav-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(61, 42, 37, 0.85);
+            white-space: nowrap;
+        }
+
+        .hero-nav-btn:hover .nav-text {
+            color: var(--sage-green);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--md) var(--xl);
+            background: rgba(252, 246, 240, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 75, 49, 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.3rem;
+            color: var(--ink-deep);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--lg);
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--ink-medium);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sage-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 180px;
+            background: rgba(252, 246, 240, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            border: 1px solid rgba(184, 75, 49, 0.15);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            padding: var(--sm) 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: var(--sm) var(--lg);
+            font-size: 0.85rem;
+            color: var(--ink-medium);
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(184, 75, 49, 0.08);
+            color: var(--sage-green);
+        }
+
+        .nav-day-badge {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            background: var(--sage-green);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: var(--sm);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--xxl) var(--xl);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--xxl);
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sage-green);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: var(--sm);
+        }
+
+        .section-title {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--ink-deep);
+            margin-bottom: var(--md);
+        }
+
+        .section-desc {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--ink-medium);
+            font-weight: 400;
+        }
+
+        /* Overview Section */
+        .overview {
+            background: linear-gradient(180deg, var(--cream-warm) 0%, var(--paper) 100%);
+            padding-top: var(--xxl);
+        }
+
+        .timeline-overview {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--lg) 0;
+        }
+
+        .timeline-overview::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                var(--sage-pale) 10%,
+                var(--sage-green) 50%,
+                var(--sage-pale) 90%,
+                transparent 100%
+            );
+            border-radius: 1px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: var(--lg);
+            margin-bottom: var(--md);
+            position: relative;
+        }
+
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 58px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: white;
+            border: 3px solid var(--sage-green);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(184, 75, 49, 0.15);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: var(--sage-green);
+            box-shadow: 0 0 0 4px rgba(184, 75, 49, 0.2);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: var(--md) var(--lg);
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(184, 75, 49, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 4px 16px rgba(184, 75, 49, 0.1);
+            border-color: rgba(184, 75, 49, 0.2);
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: baseline;
+            gap: var(--sm);
+            margin-bottom: 6px;
+        }
+
+        .timeline-day {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--sage-green);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--mist-gray);
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            color: var(--ink-deep);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-route {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-route span {
+            font-size: 0.85rem;
+            color: var(--ink-medium);
+            font-weight: 500;
+        }
+
+        .timeline-route .arrow {
+            color: var(--sage-pale);
+            font-size: 0.75rem;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .timeline-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            background: rgba(184, 75, 49, 0.08);
+            border-radius: 12px;
+            font-size: 0.78rem;
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding-left: 0;
+        }
+
+        .day-card {
+            position: relative;
+            margin-bottom: var(--xxl);
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(184, 75, 49, 0.05);
+        }
+
+        .day-card:hover {
+            box-shadow: 0 8px 40px rgba(184, 75, 49, 0.12);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #c04829 0%, #a6391d 50%, #8c2a11 100%);
+            padding: var(--xl) var(--xl) var(--xl) calc(var(--xl) + 8px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold-bright), var(--gold-accent), #c28842);
+        }
+
+        .day-header::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(90deg, transparent, rgba(229, 185, 117, 0.15));
+            pointer-events: none;
+        }
+
+        .day-badge-row {
+            display: flex;
+            align-items: center;
+            gap: var(--md);
+            margin-bottom: var(--sm);
+        }
+
+        .day-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-bright));
+            border-radius: 12px;
+            color: #4a2b22;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(201, 147, 83, 0.4);
+            flex-shrink: 0;
+        }
+
+        .day-date {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        .day-date .weekday {
+            display: inline-block;
+            padding: 2px 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            margin-left: var(--sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .day-title {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: var(--sm);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .day-route {
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .route-arrow {
+            color: var(--gold-bright);
+            font-weight: 600;
+        }
+
+        .day-content {
+            padding: var(--xl);
+        }
+
+        /* Time Slot */
+        .time-slot {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: var(--lg);
+            margin-bottom: var(--xl);
+            padding-bottom: var(--lg);
+            border-bottom: 1px dashed rgba(184, 75, 49, 0.15);
+        }
+
+        .time-slot:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: var(--sage-green);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding-top: 4px;
+        }
+
+        .slot-content h4 {
+            font-size: 1.2rem;
+            color: var(--ink-deep);
+            margin-bottom: var(--sm);
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+            font-weight: 600;
+        }
+
+        .slot-tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: rgba(201, 147, 83, 0.15);
+            color: #a67232;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .slot-tag.alert {
+            background: rgba(184, 75, 49, 0.1);
+            color: var(--sage-green);
+            border: 1px solid rgba(184, 75, 49, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(184, 75, 49, 0.4); }
+            70% { box-shadow: 0 0 0 4px rgba(184, 75, 49, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(184, 75, 49, 0); }
+        }
+
+        .slot-content p {
+            color: var(--ink-medium);
+            font-size: 0.95rem;
+            margin-bottom: var(--md);
+            font-weight: 400;
+            line-height: 1.9;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--sm);
+            margin-top: var(--md);
+        }
+
+        .feature-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--xs);
+            padding: 4px 12px;
+            background: rgba(184, 75, 49, 0.06);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--ink-medium);
+            font-weight: 500;
+        }
+
+        /* Tips Box */
+        .tips-box {
+            background: rgba(184, 75, 49, 0.04);
+            border-radius: 8px;
+            padding: var(--md);
+            margin-top: var(--lg);
+            border-left: 3px solid var(--sage-green);
+        }
+
+        .tips-box h5 {
+            font-size: 0.9rem;
+            color: var(--sage-green);
+            margin-bottom: var(--sm);
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+            font-weight: 600;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-box li {
+            padding: 4px 0 4px var(--md);
+            color: var(--ink-light);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .tips-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--sage-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+            top: 6px;
+        }
+
+        .highlight {
+            color: var(--sage-green);
+            font-weight: 600;
+        }
+
+        /* Food Section */
+        .food-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-warm) 100%);
+            border-radius: 12px;
+            padding: var(--md) var(--lg);
+            margin-top: var(--md);
+            border: 1px solid rgba(201, 147, 83, 0.15);
+        }
+
+        .food-title {
+            font-size: 0.9rem;
+            color: #a67232;
+            margin-bottom: var(--sm);
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+            font-weight: 600;
+        }
+
+        .food-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--sm);
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            gap: var(--xs);
+            padding: 4px 10px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--ink-deep);
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Key Section */
+        .key-section {
+            padding: var(--xxl) var(--xl);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--xl);
+            margin-top: var(--xl);
+        }
+
+        .key-card {
+            background: white;
+            border-radius: 20px;
+            padding: var(--xl);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(184, 75, 49, 0.08);
+        }
+
+        .key-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--md);
+            margin-bottom: var(--lg);
+            padding-bottom: var(--md);
+            border-bottom: 1px solid rgba(184, 75, 49, 0.1);
+        }
+
+        .key-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--sage-pale), var(--cream));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .key-card-header h3 {
+            font-size: 1.15rem;
+            color: var(--ink-deep);
+            font-weight: 600;
+        }
+
+        .time-table {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--cream);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .time-row:hover {
+            background: var(--cream-warm);
+            transform: translateX(4px);
+        }
+
+        .time-event {
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+        }
+
+        .time-tag {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .time-tag.train { background: rgba(184, 75, 49, 0.12); }
+        .time-tag.hotel { background: rgba(201, 147, 83, 0.15); }
+        .time-tag.music { background: rgba(214, 113, 81, 0.15); }
+
+        .time-name {
+            font-size: 0.9rem;
+            color: var(--ink-deep);
+            font-weight: 600;
+        }
+
+        .time-value {
+            font-size: 0.95rem;
+            color: var(--sage-green);
+            font-weight: 700;
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--sm);
+            padding: 12px 14px;
+            background: var(--cream);
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(184, 75, 49, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(135deg, var(--sage-pale), var(--cream));
+            border-color: var(--sage-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 75, 49, 0.1);
+        }
+
+        .nav-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .nav-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .nav-name {
+            font-size: 0.9rem;
+            color: var(--ink-deep);
+            font-weight: 600;
+        }
+
+        .nav-addr {
+            font-size: 0.75rem;
+            color: var(--mist-gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-medium);
+            color: var(--cream);
+            text-align: center;
+            padding: var(--xxl) var(--xl);
+        }
+
+        .footer-quote {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.6rem;
+            margin-bottom: var(--md);
+            opacity: 0.95;
+            color: var(--gold-bright);
+        }
+
+        .footer-note {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* Mobile specific styles and overrides omitted for brevity, but retaining core structures */
+        @media (max-width: 768px) {
+            .hero-title { font-size: clamp(3rem, 10vw, 4.5rem); letter-spacing: 0.05em; }
+            .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.15em; }
+            .timeline-item { flex-direction: column; gap: var(--sm); }
+            .timeline-marker { display: none; }
+            .timeline-overview::before { display: none; }
+            .day-card { border-radius: 16px; }
+            .time-slot { grid-template-columns: 1fr; gap: var(--xs); }
+            .time-label { padding-bottom: 4px; }
+            .key-grid { grid-template-columns: 1fr; }
+            .nav-grid { grid-template-columns: 1fr; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
 </head>
 <body>
-<div class="container">
 
-<!-- HERO -->
-<div class="hero">
-  <span class="tag">LOCAL · NO BS · 2026/05</span><span class="v2">v2 已剔除踩雷店</span>
-  <h1>长沙宝子避坑指南<br>—— G 老师 30 选, 本地佬挤水版 🌶️</h1>
-  <p class="sub">v2 版本根据宝子反馈做了三件事: ① 撤掉<strong>盟重烧烤</strong>(踩雷店, 增加"为什么这么多人吹"专章揭密) ② 删掉<strong>文和友</strong>(已去过) ③ 补漏区移除<strong>湖南博物院/岳麓山/橘子洲</strong>等已去过的目的地, 改推真本地夜宵 + 小酒馆。</p>
-  <p class="meta">📍 起点: 五一广场 · 🕒 报告日期: 2026-05-26 · 🎯 受众: 不是第一次来长沙 / 想看真本地视角的宝子</p>
-</div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-mountains">
+            <!-- 最远层山峰 (Sunset tint) -->
+            <svg class="karst-far" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="farGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="transparent"/>
+                        <stop offset="30%" stop-color="#dca890"/>
+                        <stop offset="100%" stop-color="#c8866b"/>
+                    </linearGradient>
+                </defs>
+                <ellipse cx="50" cy="500" rx="55" ry="280" fill="url(#farGrad)"/>
+                <ellipse cx="140" cy="500" rx="42" ry="220" fill="url(#farGrad)"/>
+                <ellipse cx="220" cy="500" rx="65" ry="310" fill="url(#farGrad)"/>
+                <ellipse cx="320" cy="500" rx="48" ry="250" fill="url(#farGrad)"/>
+                <ellipse cx="400" cy="500" rx="70" ry="340" fill="url(#farGrad)"/>
+                <ellipse cx="500" cy="500" rx="45" ry="230" fill="url(#farGrad)"/>
+                <ellipse cx="580" cy="500" rx="60" ry="290" fill="url(#farGrad)"/>
+                <ellipse cx="680" cy="500" rx="52" ry="260" fill="url(#farGrad)"/>
+                <ellipse cx="780" cy="500" rx="68" ry="320" fill="url(#farGrad)"/>
+                <ellipse cx="880" cy="500" rx="50" ry="240" fill="url(#farGrad)"/>
+                <ellipse cx="960" cy="500" rx="72" ry="350" fill="url(#farGrad)"/>
+                <ellipse cx="1060" cy="500" rx="48" ry="255" fill="url(#farGrad)"/>
+                <ellipse cx="1140" cy="500" rx="62" ry="295" fill="url(#farGrad)"/>
+                <ellipse cx="1240" cy="500" rx="55" ry="275" fill="url(#farGrad)"/>
+                <ellipse cx="1340" cy="500" rx="65" ry="305" fill="url(#farGrad)"/>
+                <ellipse cx="1420" cy="500" rx="48" ry="235" fill="url(#farGrad)"/>
+            </svg>
 
-<!-- 总评 -->
-<section>
-  <h2>🧭 一句话总评 <span class="h2-sub">v2 结论</span></h2>
-  <div class="overview">
-    <p><strong>整体打分: 28 个有效条目里 7 个 S 级闭眼冲, 9 个 A 级值得专程, 5 个 B 级顺路, 3 个 C 级谨慎, 4 个本地佬没听过需自查。另外 2 个(盟重/文和友)已根据宝子反馈剔除。</strong></p>
-    <p>G 老师做得对的部分: <strong>南门口苍蝇馆 + 巴赫西点 + 茶颜悦色</strong>这套配置很对味, 是真本地吃喝路径。</p>
-    <p>需要拉回的部分: ① <strong>"35 分钟车程"反复破坏</strong>(铁炉寺工作日打车要 50 分钟); ② <strong>把茶颜悦色推两次、五一广场和万达凑数</strong>明显凑 30; ③ <strong>烧烤推了盟重</strong>——这是种草号的标准答案, 但实际品控早就崩了, 本地真烧烤老炮认五娭毑/哥老倌/任氏。</p>
-    <div class="quote">📌 核心建议: G 老师 30 选实际可用 ~22 个, 加上我替换的本地烧烤 + 小酒馆 + 夜宵补充, 凑成"高浓度 25 选"。详见下方分级和动线。</div>
-    <div class="exclude">🚫 <strong>已根据反馈排除(不再出现在动线里):</strong> 湖南博物院、岳麓山、岳麓书院、橘子洲、文和友、盟重烧烤。这些要么去过, 要么踩过雷。</div>
-  </div>
-</section>
+            <!-- 中远景层 -->
+            <svg class="karst-mid-far" viewBox="0 0 1440 450" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="midFarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="transparent"/>
+                        <stop offset="25%" stop-color="#b86b51"/>
+                        <stop offset="100%" stop-color="#994d36"/>
+                    </linearGradient>
+                </defs>
+                <ellipse cx="80" cy="450" rx="65" ry="260" fill="url(#midFarGrad)"/>
+                <ellipse cx="180" cy="450" rx="50" ry="200" fill="url(#midFarGrad)"/>
+                <ellipse cx="280" cy="450" rx="75" ry="300" fill="url(#midFarGrad)"/>
+                <ellipse cx="400" cy="450" rx="58" ry="230" fill="url(#midFarGrad)"/>
+                <ellipse cx="520" cy="450" rx="80" ry="320" fill="url(#midFarGrad)"/>
+                <ellipse cx="640" cy="450" rx="55" ry="220" fill="url(#midFarGrad)"/>
+                <ellipse cx="760" cy="450" rx="70" ry="280" fill="url(#midFarGrad)"/>
+                <ellipse cx="880" cy="450" rx="60" ry="240" fill="url(#midFarGrad)"/>
+                <ellipse cx="1000" cy="450" rx="78" ry="310" fill="url(#midFarGrad)"/>
+                <ellipse cx="1120" cy="450" rx="52" ry="210" fill="url(#midFarGrad)"/>
+                <ellipse cx="1220" cy="450" rx="68" ry="270" fill="url(#midFarGrad)"/>
+                <ellipse cx="1340" cy="450" rx="58" ry="235" fill="url(#midFarGrad)"/>
+            </svg>
 
-<!-- 盟重答疑专章 -->
-<section>
-  <h2>🔎 盟重为什么这么多人吹? <span class="h2-sub">宝子点的题, 运营老司机视角</span></h2>
-  <div class="deep-dive">
-    <span class="dd-tag">特别答疑 · 营销机制解剖</span>
-    <h3>盟重烧烤 = 被算法养着的品牌资产, 不是被味道养着的店</h3>
-    <p class="dd-sub">宝子反馈"烤串都是冷的, 量也小", 这不是个例, 是结构性问题。我拆给你看:</p>
-    <ol>
-      <li><strong>早期口碑底子是真的</strong>: 2010 年代芙蓉广场附近的老盟重, 大份猛火, 真本地饕客认可。这是品牌资产的起点。</li>
-      <li><strong>抖音 / 小红书算法放大</strong>: 2020 年后短视频起来, "长沙夜宵江湖"成为旅游标签, 盟重靠<strong>老板娘人设 + 排队画面 + 江湖气场地</strong>在算法里反复曝光, 占据了"长沙烧烤"心智第一位。</li>
-      <li><strong>加盟扩张稀释品控</strong>: 分店越开越多, 每店烤功 / 食材 / 出餐速度全部打折, 但流量仍集中在"盟重"这个品牌名下。你吃的高正街店和别人吹的可能不是同一家。</li>
-      <li><strong>种草号互抄作业</strong>: "长沙必吃榜""一日吃遍长沙"账号几十个, 盟重是固定位。你刷十篇有八篇提它, 错觉就是"全国都说好"。</li>
-      <li><strong>"烤串冷"是旺店降本通病</strong>: 高峰期出餐压力大, 流水线<strong>大批预烤 → 盐池保温 → 等单时二次出餐</strong>, 自然冷。这不是某一晚的失误, 是 SOP。</li>
-      <li><strong>本地老吃家早撤了</strong>: 老炮儿换去了五娭毑、哥老倌、任氏。剩下的评价池主要是游客 + 第一次来的本地年轻人, 没参照系, 高分继续被刷。</li>
-    </ol>
-    <div class="dd-conclusion">💡 <strong>结论:</strong> 你踩雷不是你"运气不好", 而是这家店的<strong>"种草曝光率" ≫ "实际出品质量"</strong>。下次遇到类似套路(老板娘人设 + 江湖气装修 + 排队画面 + 几十个种草号同口径吹), 直接降级处理就行。本地真烧烤推荐见下面的"S 级替补区"。</div>
-  </div>
-</section>
+            <!-- 中景层 -->
+            <svg class="karst-mid" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="midGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="transparent"/>
+                        <stop offset="20%" stop-color="#803823"/>
+                        <stop offset="100%" stop-color="#612615"/>
+                    </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="400" rx="70" ry="240" fill="url(#midGrad)"/>
+                <ellipse cx="220" cy="400" rx="55" ry="190" fill="url(#midGrad)"/>
+                <ellipse cx="340" cy="400" rx="82" ry="280" fill="url(#midGrad)"/>
+                <ellipse cx="480" cy="400" rx="60" ry="210" fill="url(#midGrad)"/>
+                <ellipse cx="600" cy="400" rx="85" ry="290" fill="url(#midGrad)"/>
+                <ellipse cx="740" cy="400" rx="65" ry="225" fill="url(#midGrad)"/>
+                <ellipse cx="860" cy="400" rx="78" ry="265" fill="url(#midGrad)"/>
+                <ellipse cx="1000" cy="400" rx="55" ry="185" fill="url(#midGrad)"/>
+                <ellipse cx="1120" cy="400" rx="75" ry="255" fill="url(#midGrad)"/>
+                <ellipse cx="1260" cy="400" rx="62" ry="215" fill="url(#midGrad)"/>
+                <ellipse cx="1380" cy="400" rx="72" ry="245" fill="url(#midGrad)"/>
+            </svg>
 
-<!-- 评级金字塔 -->
-<section>
-  <h2>📊 评级金字塔 <span class="h2-sub">v2 分布</span></h2>
-  <div class="pyramid">
-    <div class="pyramid-row row-s"><span class="label">S 级</span><span class="desc">闭眼冲 · 来长沙不去会后悔</span><span class="count">7 个</span></div>
-    <div class="pyramid-row row-a"><span class="label">A 级</span><span class="desc">值得专程一去 · 本地认可</span><span class="count">9 个</span></div>
-    <div class="pyramid-row row-b"><span class="label">B 级</span><span class="desc">顺路打卡 · 分人分情况</span><span class="count">5 个</span></div>
-    <div class="pyramid-row row-c"><span class="label">C 级</span><span class="desc">已网红化 · 谨慎 / 避坑</span><span class="count">3 个</span></div>
-    <div class="pyramid-row row-d"><span class="label">存疑</span><span class="desc">本地佬没听过, 出发前自查</span><span class="count">4 个</span></div>
-    <div class="pyramid-row row-x"><span class="label">已剔除</span><span class="desc">宝子反馈 / 已去过 / 踩雷</span><span class="count">2 个</span></div>
-  </div>
-</section>
+            <!-- 近景层 -->
+            <svg class="karst-near" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="nearGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="transparent"/>
+                        <stop offset="15%" stop-color="#4a1a0d"/>
+                        <stop offset="100%" stop-color="#2e1008"/>
+                    </linearGradient>
+                </defs>
+                <ellipse cx="80" cy="300" rx="75" ry="210" fill="url(#nearGrad)"/>
+                <ellipse cx="200" cy="300" rx="60" ry="170" fill="url(#nearGrad)"/>
+                <ellipse cx="320" cy="300" rx="88" ry="250" fill="url(#nearGrad)"/>
+                <ellipse cx="460" cy="300" rx="65" ry="185" fill="url(#nearGrad)"/>
+                <ellipse cx="600" cy="300" rx="92" ry="260" fill="url(#nearGrad)"/>
+                <ellipse cx="750" cy="300" rx="68" ry="195" fill="url(#nearGrad)"/>
+                <ellipse cx="880" cy="300" rx="82" ry="235" fill="url(#nearGrad)"/>
+                <ellipse cx="1020" cy="300" rx="58" ry="165" fill="url(#nearGrad)"/>
+                <ellipse cx="1150" cy="300" rx="80" ry="230" fill="url(#nearGrad)"/>
+                <ellipse cx="1300" cy="300" rx="70" ry="200" fill="url(#nearGrad)"/>
+                <ellipse cx="1400" cy="300" rx="55" ry="160" fill="url(#nearGrad)"/>
+            </svg>
 
-<!-- S 级 -->
-<section>
-  <h2>🥇 S 级 · 闭眼冲 <span class="h2-sub">本地人也常去, 来长沙不去就亏</span></h2>
+            <!-- 最近层 -->
+            <svg class="karst-close" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="closeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="transparent"/>
+                        <stop offset="10%" stop-color="#1f0c05"/>
+                        <stop offset="100%" stop-color="#120602"/>
+                    </linearGradient>
+                </defs>
+                <ellipse cx="120" cy="200" rx="80" ry="150" fill="url(#closeGrad)"/>
+                <ellipse cx="280" cy="200" rx="65" ry="125" fill="url(#closeGrad)"/>
+                <ellipse cx="420" cy="200" rx="90" ry="165" fill="url(#closeGrad)"/>
+                <ellipse cx="580" cy="200" rx="70" ry="135" fill="url(#closeGrad)"/>
+                <ellipse cx="720" cy="200" rx="95" ry="175" fill="url(#closeGrad)"/>
+                <ellipse cx="880" cy="200" rx="62" ry="120" fill="url(#closeGrad)"/>
+                <ellipse cx="1020" cy="200" rx="88" ry="160" fill="url(#closeGrad)"/>
+                <ellipse cx="1180" cy="200" rx="75" ry="145" fill="url(#closeGrad)"/>
+                <ellipse cx="1320" cy="200" rx="68" ry="130" fill="url(#closeGrad)"/>
+            </svg>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">天宝兄弟 (小龙虾)</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">夜宵 / 龙虾</span><span>5月底-9月最佳, 现在正季</span></div>
-    <div class="comment">长沙小龙虾连锁里口碑最稳的之一, 口味虾 + 蒜蓉虾尾各来一份, 罗氏虾看心情。</div>
-    <div class="tip">⚠️ 排队是日常, 下午 5 点前到, 或 9 点后冲。</div>
-  </div>
+            <div class="ink-wash-layer"></div>
+            <div class="ink-wash"></div>
+        </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">娟娟餐馆</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">苍蝇馆 / 家常湘菜</span></div>
-    <div class="comment">苍蝇馆界天花板。老板娘根据口味推荐这事是真的, 但记住一条: <strong>主动跟老板娘说"我不能吃太辣"她才会收手</strong>, 否则按本地人辣度上, 第一口你会怀疑人生。</div>
-    <div class="tip">招牌: 农家小炒肉、剁椒鱼头、香干回锅肉。两人 ¥120 上下。</div>
-  </div>
+        <div class="hero-content">
+            <span class="hero-badge">湖南 · 长沙</span>
+            <h1 class="hero-title">星城漫游</h1>
+            <p class="hero-subtitle">宝子的狂欢周末</p>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">巴赫西点 (Bach)</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">烘焙 / 德式</span></div>
-    <div class="comment">长沙烘焙天花板, 德国师傅, 法棍 / 碱水结 / 全麦欧包都是硬通货。这家是真"对标高品质审美", 不是 G 老师吹的。</div>
-    <div class="tip warn">⚠️ G 老师写"湘春巷"我存疑, 大概率是<strong>湘春路</strong>方向(开福区), 出门请用地图实时定位。</div>
-  </div>
+            <div class="hero-nav">
+                <a href="#day1" class="hero-nav-btn">
+                    <span class="nav-day">D1</span>
+                    <span class="nav-text">热血重逢</span>
+                </a>
+                <a href="#day2" class="hero-nav-btn">
+                    <span class="nav-day">D2</span>
+                    <span class="nav-text">古刹夜宵</span>
+                </a>
+                <a href="#day3" class="hero-nav-btn">
+                    <span class="nav-day">D3</span>
+                    <span class="nav-text">老城烟火</span>
+                </a>
+            </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">茶颜悦色 (任选一家)</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">奶茶 / 长沙特产</span></div>
-    <div class="comment">来长沙必喝。幽兰拿铁、声声乌龙、桂花弄是新人三件套。G 老师把"黄兴中路店"和"人民东路店"分两条推, 纯凑数, 哪家近喝哪家。</div>
-    <div class="tip">🍵 进阶: 试茶颜系子品牌 <strong>古德墨柠</strong>(柠檬茶) 和 <strong>鸳央咖啡</strong>(中式咖啡), 排队少、出片高级。</div>
-  </div>
+            <div class="hero-quick-nav">
+                <a href="#overview">概览</a>
+                <span>/</span>
+                <a href="#keytimes">时刻</a>
+                <span>/</span>
+                <a href="#nav-links">导航</a>
+            </div>
+        </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">开福寺</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">古刹 / 市内</span></div>
-    <div class="comment">市区最方便的千年古刹, 五一广场打车 15 分钟。<strong>素面 ¥10 一碗</strong>, 加 ¥5 素菜, 性价比拉满。</div>
-    <div class="tip">早上 8 点前到最舒服, 工作日完全静。</div>
-  </div>
+        <div class="scroll-indicator" onclick="document.querySelector('#overview').scrollIntoView({behavior: 'smooth'})">
+            <span>向下滑动</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </header>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">夏记粉店 (观音井)</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">早餐 / 米粉</span></div>
-    <div class="comment">藏巷子里的肉丝粉肉丸粉天花板, 汤是老底子。</div>
-    <div class="tip">⏰ 7-9 点最热闹, 10 点半基本卖完。口诀: "肉丝肉丸双码, 干挑, 加蛋, 多加葱"。</div>
-  </div>
+    <!-- Overview Section -->
+    <section class="overview" id="overview">
+        <div class="section-header">
+            <div class="section-label">Trip Overview</div>
+            <h2 class="section-title">行程概览</h2>
+            <p class="section-desc">深度体验星城的市井烟火与狂欢夜色</p>
+        </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">公交新村粉店</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">早餐 / 米粉</span></div>
-    <div class="comment">真本地老粉店, 雪里蕻和干豆角配菜是灵魂。和夏记二选一, 一次嗦两家会撑死。</div>
-  </div>
-</section>
+        <div class="timeline-overview">
+            <!-- D1 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="timeline-day">第一天</span>
+                        <span class="timeline-date">5月29日</span>
+                    </div>
+                    <div class="timeline-title">热血重逢与热辣深夜</div>
+                    <div class="timeline-route">
+                        <span>长沙南站</span>
+                        <span class="arrow">→</span>
+                        <span>湘江宾馆1968</span>
+                        <span class="arrow">→</span>
+                        <span>芒果馆演唱会</span>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">🚄 高铁抵达</span>
+                        <span class="timeline-tag">🎵 演唱会狂欢</span>
+                    </div>
+                </div>
+            </div>
 
-<!-- S 级烧烤替补区 -->
-<section>
-  <h2>🔥 S 级替补 · 烧烤本地真香榜 <span class="h2-sub">替代盟重的三家</span></h2>
+            <!-- D2 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="timeline-day">第二天</span>
+                        <span class="timeline-date">5月30日</span>
+                    </div>
+                    <div class="timeline-title">古刹国宝与湘江风光</div>
+                    <div class="timeline-route">
+                        <span>华南小吃</span>
+                        <span class="arrow">→</span>
+                        <span>古开福寺</span>
+                        <span class="arrow">→</span>
+                        <span>金色印象</span>
+                        <span class="arrow">→</span>
+                        <span>天宝兄弟</span>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">📿 千年古刹</span>
+                        <span class="timeline-tag">💆‍♂️ 顶级足疗</span>
+                        <span class="timeline-tag">🦞 龙虾排队王</span>
+                    </div>
+                </div>
+            </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">五娭毑烧烤</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★★</span><span class="cat">夜宵 / 老牌烧烤</span></div>
-    <div class="comment">长沙真烧烤老炮认的第一档之一。烤茄子、烤韭菜、烤鸡翅是基本盘, 现烤现上, 不存在"预烤等单"。门店比盟重朴素, 但出品在线。</div>
-    <div class="tip warn">⚠️ "五娭毑"在长沙有几家分店, 名字相似的也有(都喜欢用"娭毑"二字), 选评价稳定的老店, 别冲新分店。</div>
-  </div>
+            <!-- D3 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="timeline-day">第三天</span>
+                        <span class="timeline-date">5月31日</span>
+                    </div>
+                    <div class="timeline-title">市井晨曦与温情返程</div>
+                    <div class="timeline-route">
+                        <span>南门口</span>
+                        <span class="arrow">→</span>
+                        <span>解满嗲小吃</span>
+                        <span class="arrow">→</span>
+                        <span>长沙南站</span>
+                    </div>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">🥢 地道老长沙</span>
+                        <span class="timeline-tag">✈️ 满载而归</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">哥老倌烧烤</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">夜宵 / 江湖老店</span></div>
-    <div class="comment">长沙夜宵老江湖, 烤生蚝、烤鱼、烤茄子稳定输出。环境一样有点糙, 但味道是真的。</div>
-    <div class="tip">本地人吃烧烤心理价位 ¥80-120 / 人。如果一家烧烤人均冲 ¥200, 大概率是流量店。</div>
-  </div>
+    <!-- Detailed Itinerary -->
+    <section id="itinerary">
+        <div class="section-header">
+            <div class="section-label">Daily Itinerary</div>
+            <h2 class="section-title">详细行程</h2>
+            <p class="section-desc">品味每一个不可复制的星城时刻</p>
+        </div>
 
-  <div class="card tier-s">
-    <div class="card-head"><span class="name">任氏烧烤</span><span class="badge badge-s">S</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">夜宵 / 老牌</span></div>
-    <div class="comment">老底子, 本地人评价稳定。和五娭毑、哥老倌组成"本地烧烤老炮三件套"。三家随便挑一家, 都比再去一次盟重靠谱。</div>
-    <div class="tip warn">⚠️ 出发前用大众点评搜近 1 个月评价做最终判断, 长沙烧烤店换厨子 / 换分店, 品控会有波动。</div>
-  </div>
-</section>
+        <div class="timeline">
+            <!-- Day 1 -->
+            <article class="day-card fade-in" id="day1">
+                <div class="day-header">
+                    <div class="day-badge-row">
+                        <div class="day-number">D1</div>
+                        <div class="day-date">5月29日 <span class="weekday">周五</span></div>
+                    </div>
+                    <h3 class="day-title">热血重逢与热辣深夜</h3>
+                    <div class="day-route">
+                        <span>长沙南站</span>
+                        <span class="route-arrow">→</span>
+                        <span>湘江宾馆1968</span>
+                        <span class="route-arrow">→</span>
+                        <span>芒果馆</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="time-slot">
+                        <div class="time-label">下午</div>
+                        <div class="slot-content">
+                            <h4>抵达星城 <span class="slot-tag">启程</span></h4>
+                            <p>乘坐 G241 抵达长沙南站，直接打车前往位于五一商圈的“湘江宾馆1968”办理入住。放下行李，在市中心感受一下长沙的初夏热浪。</p>
+                            <div class="feature-list">
+                                <span class="feature-tag">🚄 15:56 准时抵达</span>
+                                <span class="feature-tag">🏨 五一广场核心地段</span>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- A 级 -->
-<section>
-  <h2>🥈 A 级 · 值得专程去 <span class="h2-sub">G 老师选得不错, 我加点 context</span></h2>
+                    <div class="time-slot">
+                        <div class="time-label">晚上</div>
+                        <div class="slot-content">
+                            <h4>芒果馆·李宗盛演唱会 <span class="slot-tag">今夜高光</span></h4>
+                            <p>前往湖南国际会展中心（芒果馆南广场），沉浸式聆听大哥的经典老歌。这注定是一个充满回忆杀与感动的夜晚。</p>
+                            <div class="feature-list">
+                                <span class="feature-tag">🎵 提前绑定实名信息</span>
+                                <span class="feature-tag">🚕 建议提前打车或地铁前往</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">上碧湘街 + 南门口</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">市井早市 / Citywalk</span></div>
-    <div class="comment">G 老师"八大局平替"那个比喻牵强, 但<strong>南门口确实是长沙市井灵魂</strong>。上碧湘街只是其中一段, 配套<strong>南门口德园包子、向群锅饺、四娭毑臭豆腐</strong>才完整。</div>
-    <div class="tip">早上 7-10 点去最对味, 中午就散了。</div>
-  </div>
+            <!-- Day 2 -->
+            <article class="day-card fade-in" id="day2">
+                <div class="day-header">
+                    <div class="day-badge-row">
+                        <div class="day-number">D2</div>
+                        <div class="day-date">5月30日 <span class="weekday">周六</span></div>
+                    </div>
+                    <h3 class="day-title">古刹祈福与夜宵狂欢</h3>
+                    <div class="day-route">
+                        <span>古开福寺</span>
+                        <span class="route-arrow">→</span>
+                        <span>维夫格子</span>
+                        <span class="route-arrow">→</span>
+                        <span>金色印象</span>
+                        <span class="route-arrow">→</span>
+                        <span>天宝兄弟</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="time-slot">
+                        <div class="time-label">上午</div>
+                        <div class="slot-content">
+                            <h4>华南小吃 & 古开福寺 <span class="slot-tag">清幽古韵</span></h4>
+                            <p>睡到自然醒，去蔡锷北路的华南小吃吃一顿地道的碳水早餐。随后前往千年木构古刹——开福寺。这里避开了岳麓山的人潮，香火旺而不喧，木质殿宇极具美感。</p>
+                            <div class="feature-list">
+                                <span class="feature-tag">🍜 本地硬核碳水</span>
+                                <span class="feature-tag">📿 门票只需 10 元</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">肆姐面粉 (原味面粉馆)</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">早餐 / 米粉</span></div>
-    <div class="comment">长沙比较知名的粉店, 牛肉粉扎实, 但已经偏游客化, 排队比夏记长。</div>
-    <div class="tip">嗦粉只有一次机会, 我优先夏记 / 公交新村。</div>
-  </div>
+                    <div class="time-slot">
+                        <div class="time-label">下午</div>
+                        <div class="slot-content">
+                            <h4>江景咖啡 & 极致足疗 <span class="slot-tag">极度舒适</span></h4>
+                            <p>在毛家饭店(湘江店)吃完正宗湘菜后，移步杜甫江阁店的维夫格子(coffee&Waffle)，吹着湘江晚风发个呆。随后直奔金色印象(黄兴步行街店)，边看电影边做一次顶级的足底和肩颈放松，把平时的疲惫一扫而光。</p>
+                            <div class="feature-list">
+                                <span class="feature-tag">☕ 一线江景视野</span>
+                                <span class="feature-tag">💆‍♂️ 长沙足疗界爱马仕</span>
+                                <span class="feature-tag">🥟 内部免费自助餐极佳</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">鲁哥饭店</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">苍蝇馆 / 家常湘菜</span></div>
-    <div class="comment">咸蛋黄茄子、白辣椒炒肉真的下饭。和娟娟二选一: 娟娟更"猛", 鲁哥更"家"。</div>
-    <div class="tip">两个都想去? 一个午饭一个晚饭, 别同一天连吃。</div>
-  </div>
+                    <div class="time-slot">
+                        <div class="time-label">深夜</div>
+                        <div class="slot-content">
+                            <h4>天宝兄弟 (汇景城) <span class="slot-tag alert">排队预警</span></h4>
+                            <p>长沙小龙虾的绝对王者！三个创始人当年在火车站茶楼推小车起家，死守“只用炮头大虾、现点现洗现做”的铁律，罗氏虾的虾膏极度饱满。</p>
+                            <div class="tips-box">
+                                <h5>🚨 G 老师的终极排队警告！</h5>
+                                <ul>
+                                    <li>周六晚上的天宝兄弟排队通常在 <span class="highlight">3-5 小时以上</span>！</li>
+                                    <li>既然把它当做深夜夜宵，<span class="highlight">务必在下午 4:00 - 5:00 之间就在微信公众号上提前取号！</span></li>
+                                    <li>千万不要等做完足疗再现场取号，大概率会因为停止放号而抱憾空跑！</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">潮宗街</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">Citywalk / 历史街区</span></div>
-    <div class="comment">长沙仅存的几条石板老街之一, 改造克制, 民国建筑 + 独立咖啡 + 买手店密度高。工作日尤其舒服。</div>
-    <div class="tip">配<strong>金九福、贺龙故居、潮宗街教堂</strong>串起来, 一两个小时正好。</div>
-  </div>
+            <!-- Day 3 -->
+            <article class="day-card fade-in" id="day3">
+                <div class="day-header">
+                    <div class="day-badge-row">
+                        <div class="day-number">D3</div>
+                        <div class="day-date">5月31日 <span class="weekday">周日</span></div>
+                    </div>
+                    <h3 class="day-title">市井晨曦与温情返程</h3>
+                    <div class="day-route">
+                        <span>南门口</span>
+                        <span class="route-arrow">→</span>
+                        <span>解满嗲</span>
+                        <span class="route-arrow">→</span>
+                        <span>长沙南站</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="time-slot">
+                        <div class="time-label">上午</div>
+                        <div class="slot-content">
+                            <h4>南门口 & 解满嗲 <span class="slot-tag">老炮专属</span></h4>
+                            <p>打包行李退房，前往南门口这片老长沙美食宇宙的中心。去寻觅“解满嗲壹双好手”，这可是极其懂行的老饕选择。纯手工制作的凉面、猪血和香辣捆鸡，充满最地道的市井颗粒感。</p>
+                            <div class="food-section">
+                                <h5 class="food-title">最后的老长沙味道</h5>
+                                <div class="food-grid">
+                                    <span class="food-item">🥢 纯手工凉面</span>
+                                    <span class="food-item">🌶️ 特制香辣捆鸡</span>
+                                    <span class="food-item">🍲 龙骨猪血汤</span>
+                                </div>
+                            </div>
+                            <p style="margin-top: 10px; font-size: 0.85rem; color: #8b7d78;">💡 小贴士：解满嗲是非常传统的小摊，出摊时间随缘，如果上午没碰上，直接在南门口周边大快朵颐也绝不踩雷！</p>
+                        </div>
+                    </div>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">苏家巷 + 丰盈西里</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">Citywalk / 买手店</span></div>
-    <div class="comment">挨着的两个巷子, <strong>长沙真正的"梧桐区平替"</strong>。古着、香氛、独立设计品牌密度高, 尺度宜人。</div>
-    <div class="tip">下午 3-6 点光线最好。很多小店周一闭店。</div>
-  </div>
+                    <div class="time-slot">
+                        <div class="time-label">下午</div>
+                        <div class="slot-content">
+                            <h4>满载而归 <span class="slot-tag">返程</span></h4>
+                            <p>带上几包茶颜悦色的茶包或者酱板鸭，前往长沙南站，乘坐 G264 返回杭州。结束这场完美、充实又美味的长沙周末之旅。</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">铁炉寺</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">古刹 / 清幽</span></div>
-    <div class="comment">真清幽, 没游客团。但<strong>位置在岳麓区西北边</strong>, 从五一广场打车 40-50 分钟。G 老师"35 分钟内"在这条不成立。</div>
-    <div class="tip warn">⚠️ 既然宝子已去过岳麓山, 铁炉寺单独跑一趟性价比下降。可以工作日上午专程去, 拍照 + 静坐 1.5 小时就回。</div>
-  </div>
+    <!-- Key Section -->
+    <section class="key-section" id="keytimes">
+        <div class="section-header">
+            <div class="section-label">Key Information</div>
+            <h2 class="section-title">关键信息</h2>
+            <p class="section-desc">交通时刻提醒 & 快捷地图导航</p>
+        </div>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">金色印象足浴</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">放松 / 足疗</span></div>
-    <div class="comment">长沙足浴是真本地名片, 全国卷不过。金色印象是稳定第一梯队, "爱马仕"有点过誉但确实好。</div>
-    <div class="tip">2-3 小时套餐 ¥200-300, 含自助晚餐。<strong>放在白天暴走后的晚上躺平最爽</strong>。</div>
-  </div>
+        <div class="key-grid">
+            <!-- 关键时刻表 -->
+            <div class="key-card fade-in">
+                <div class="key-card-header">
+                    <div class="key-icon">⏰</div>
+                    <h3>车次时刻表</h3>
+                </div>
+                <div class="time-table">
+                    <div class="time-row">
+                        <div class="time-event">
+                            <span class="time-tag train">🚄</span>
+                            <span class="time-name">去程：抵达长沙南</span>
+                        </div>
+                        <div class="time-value">5/29 15:56</div>
+                    </div>
+                    <div class="time-row">
+                        <div class="time-event">
+                            <span class="time-tag hotel">🏨</span>
+                            <span class="time-name">湘江宾馆 办理入住</span>
+                        </div>
+                        <div class="time-value">16:40 左右</div>
+                    </div>
+                    <div class="time-row">
+                        <div class="time-event">
+                            <span class="time-tag music">🎵</span>
+                            <span class="time-name">芒果馆 演唱会入场</span>
+                        </div>
+                        <div class="time-value">5/29 晚上</div>
+                    </div>
+                    <div class="time-row">
+                        <div class="time-event">
+                            <span class="time-tag train">🚄</span>
+                            <span class="time-name">返程：发车前往杭州</span>
+                        </div>
+                        <div class="time-value">5/31 15:12</div>
+                    </div>
+                </div>
+            </div>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">黑色经典臭豆腐</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">小吃 / 连锁</span></div>
-    <div class="comment">连锁但品质稳定, 五一广场到处是分店。本地人更认<strong>四娭毑臭豆腐</strong>。</div>
-    <div class="tip">"路过随手吃一份"OK, 不必专门排队。</div>
-  </div>
+            <!-- 快捷导航 -->
+            <div class="key-card fade-in" id="nav-links">
+                <div class="key-card-header">
+                    <div class="key-icon">🧭</div>
+                    <h3>核心地标直达</h3>
+                </div>
+                <div class="nav-grid">
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">🏨</span>
+                        <span class="nav-info">
+                            <span class="nav-name">湘江宾馆1968</span>
+                            <span class="nav-addr">五一广场核心区</span>
+                        </span>
+                    </a>
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">🎵</span>
+                        <span class="nav-info">
+                            <span class="nav-name">芒果馆</span>
+                            <span class="nav-addr">湖南国际会展中心</span>
+                        </span>
+                    </a>
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">📿</span>
+                        <span class="nav-info">
+                            <span class="nav-name">古开福寺</span>
+                            <span class="nav-addr">千年木构建筑</span>
+                        </span>
+                    </a>
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">🦞</span>
+                        <span class="nav-info">
+                            <span class="nav-name">天宝兄弟</span>
+                            <span class="nav-addr">汇景城店</span>
+                        </span>
+                    </a>
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">💆‍♂️</span>
+                        <span class="nav-info">
+                            <span class="nav-name">金色印象</span>
+                            <span class="nav-addr">黄兴步行街店</span>
+                        </span>
+                    </a>
+                    <a href="#" class="nav-btn">
+                        <span class="nav-icon">🥢</span>
+                        <span class="nav-info">
+                            <span class="nav-name">南门口商圈</span>
+                            <span class="nav-addr">老城十字路口</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card tier-a">
-    <div class="card-head"><span class="name">荷花池生鲜市场</span><span class="badge badge-a">A</span></div>
-    <div class="meta-row"><span class="stars">★★★★☆</span><span class="cat">早市 / 市井</span></div>
-    <div class="comment">真菜市场。作为外地宝子, <strong>主要价值是"看"</strong>, 你又不带菜回去。葱油粑粑糖油粑粑周边推车摊更香。</div>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <p class="footer-quote">星城街巷，人间烟火</p>
+        <p class="footer-note">祝宝子在长沙玩得开心，吃得痛快，演唱会尽兴！🌶️</p>
+    </footer>
 
-<!-- B 级 -->
-<section>
-  <h2>🌿 B 级 · 顺路打卡 <span class="h2-sub">不专程, 路过看一眼</span></h2>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-  <div class="card tier-b">
-    <div class="card-head"><span class="name">白沙古井</span><span class="badge badge-b">B</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">地标 / 文化</span></div>
-    <div class="comment">"本地人提桶打水"是真的, 凌晨 5 点就有人。但景点价值有限, <strong>看一眼井, 拍张照, 20 分钟够了</strong>。</div>
-    <div class="tip">不专门玩泡茶可以跳。住五一广场打车 10 分钟。</div>
-  </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-  <div class="card tier-b">
-    <div class="card-head"><span class="name">太平老街</span><span class="badge badge-b">B</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">老街 / 已商业化</span></div>
-    <div class="comment">紧贴五一广场必经过。"深巷藏茶室工作室"是真的, 但主街已经是<strong>奶茶炸串卤鸡爪一条街</strong>。</div>
-    <div class="tip">晚上灯光起来看一眼, 别在主街吃饭。</div>
-  </div>
-
-  <div class="card tier-b">
-    <div class="card-head"><span class="name">坡子街 (+ 火宫殿)</span><span class="badge badge-b">B</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">老街 / 旅游团</span></div>
-    <div class="comment">主街商业化严重, 但<strong>火宫殿值得进去一次</strong>——八大小吃集合, 臭豆腐 / 糖油粑粑 / 姊妹团子一次吃完, 适合时间紧的宝子。</div>
-    <div class="tip">人均 ¥60-80, 别点炒菜, 就吃小吃拼盘。</div>
-  </div>
-
-  <div class="card tier-b">
-    <div class="card-head"><span class="name">五一广场</span><span class="badge badge-b">B</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">地标 / 住宿地</span></div>
-    <div class="comment">你住的地方, 不算景点, G 老师凑数嫌疑。但晚上人潮值得看一眼。</div>
-    <div class="tip">想看夜景推荐<strong>IFS 大楼楼顶 KAWS 大公仔</strong>, 真打卡点。</div>
-  </div>
-
-  <div class="card tier-b">
-    <div class="card-head"><span class="name">黄兴南路步行街</span><span class="badge badge-b">B</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">商业街</span></div>
-    <div class="comment">普通步行街, 但从五一广场往坡子街走必经, 顺路扫一眼即可。</div>
-  </div>
-</section>
-
-<!-- C 级 -->
-<section>
-  <h2>🚧 C 级 · 谨慎 / 避坑 <span class="h2-sub">已网红化, 性价比拉跨</span></h2>
-
-  <div class="card tier-c">
-    <div class="card-head"><span class="name">万达广场 (中山路)</span><span class="badge badge-c">C</span></div>
-    <div class="meta-row"><span class="stars">★★☆☆☆</span><span class="cat">商场 / 地名存疑</span></div>
-    <div class="comment"><strong>地名疑似有误。</strong>长沙市内主要万达广场在开福区(秀峰万达)和岳麓区, 中山路一带主要商业体是 <strong>IFS / 平和堂 / 王府井 / 海信广场</strong>。"中山路万达"我作为本地人没印象。</div>
-    <div class="tip warn">⚠️ 想吹空调进商场, 直接去 <strong>IFS</strong>(顶层 KAWS 网红打卡点), 比"中山路万达"明确得多。</div>
-  </div>
-
-  <div class="card tier-c">
-    <div class="card-head"><span class="name">茶颜悦色 人民东路店 (重复推荐)</span><span class="badge badge-c">C</span></div>
-    <div class="meta-row"><span class="stars">★★★☆☆</span><span class="cat">凑数 / 重复</span></div>
-    <div class="comment">G 老师把茶颜悦色推两次明显凑数。茶颜悦色在长沙有 <strong>500+ 家店</strong>, 走 200 米必有一家。直接划掉。</div>
-  </div>
-
-  <div class="card tier-c">
-    <div class="card-head"><span class="name">坡子街 (单独评)</span><span class="badge badge-c">C</span></div>
-    <div class="meta-row"><span class="stars">★★☆☆☆</span><span class="cat">老街 / 商业化</span></div>
-    <div class="comment">已在 B 级出现。整体老街过度旅游化, 仅推荐进火宫殿一次。</div>
-  </div>
-</section>
-
-<!-- 存疑 -->
-<section>
-  <h2>❓ 存疑 / 待核实 <span class="h2-sub">本地佬没听过, 不是说不好, 是没流量验证</span></h2>
-
-  <div class="card tier-d">
-    <div class="card-head"><span class="name">WITH KAFE / 浅印咖啡馆 / Double L Cafe</span><span class="badge badge-q">存疑</span></div>
-    <div class="comment">长沙独立咖啡确实卷, G 老师推这三家我没听过, 但不一定差。<strong>去之前用大众点评 / 小红书搜近 3 个月评价</strong>。</div>
-    <div class="tip warn">替代: 长沙我个人推荐<strong>「鸳央咖啡」(茶颜系) 和「Manner」</strong>, 至少品质有底。</div>
-  </div>
-
-  <div class="card tier-d">
-    <div class="card-head"><span class="name">松柏寺</span><span class="badge badge-q">存疑</span></div>
-    <div class="comment">长沙以"开福寺、麓山寺、铁炉寺"三寺最知名, "松柏寺"我没印象, G 老师这条可能爬来没核实。</div>
-    <div class="tip warn">想清幽古刹去<strong>麓山寺(岳麓山半山腰)</strong>或<strong>开元寺</strong>, 比"松柏寺"靠谱。但宝子既已去过岳麓山, 麓山寺等于已经路过。</div>
-  </div>
-</section>
-
-<!-- 已剔除 -->
-<section>
-  <h2>🚫 已剔除 <span class="h2-sub">根据宝子反馈, 不再推荐</span></h2>
-
-  <div class="card tier-x">
-    <div class="card-head"><span class="name">盟重烧烤 (踩雷)</span><span class="badge badge-x">剔除</span></div>
-    <div class="comment">宝子已去过, 反馈"烤串都是冷的, 量也小"。详细营销机制解剖见上方"特别答疑"专章。<strong>替代方案: S 级替补区的五娭毑 / 哥老倌 / 任氏。</strong></div>
-  </div>
-
-  <div class="card tier-x">
-    <div class="card-head"><span class="name">文和友老长沙龙虾馆 (已去过)</span><span class="badge badge-x">剔除</span></div>
-    <div class="comment">宝子已去过, 不重复推荐。本地真龙虾去天宝兄弟。</div>
-  </div>
-</section>
-
-<!-- 补漏 -->
-<section>
-  <h2>🎁 真本地补漏 <span class="h2-sub">已剔除宝子去过的省博/岳麓山/橘子洲, 只留没去过的</span></h2>
-
-  <div class="bonus-grid">
-    <div class="bonus-card">
-      <div class="b-name">化龙池 / 都正街</div>
-      <div class="b-desc">长沙小酒馆一条街, 民谣 / 摇滚现场氛围拉满。<strong>晚上 9 点后开始热闹</strong>, 比"网红酒吧街"真实十倍。距五一广场步行 15 分钟。</div>
-    </div>
-    <div class="bonus-card">
-      <div class="b-name">蔡锷北路宵夜一条街</div>
-      <div class="b-desc">长沙真夜宵江湖。凌晨 2 点炒码炒粉炒饭一条街还在排队。补"龙虾 + 烧烤"之外的另一种夜宵打开方式。</div>
-    </div>
-    <div class="bonus-card">
-      <div class="b-name">IFS 大楼顶 KAWS 雕塑</div>
-      <div class="b-desc">五一广场地标, 楼顶巨型 KAWS 雕塑出片神器。傍晚去拍夕阳 + 灯光起来后一并解决。免费。</div>
-    </div>
-    <div class="bonus-card">
-      <div class="b-name">四娭毑臭豆腐</div>
-      <div class="b-desc">本地老炮认的臭豆腐, 比黑色经典更"老底子"。多在南门口 / 老街附近, 找推车招牌。</div>
-    </div>
-    <div class="bonus-card">
-      <div class="b-name">梅溪湖艺术中心 (扎哈作品)</div>
-      <div class="b-desc">扎哈·哈迪德设计, 三个白色花瓣建筑。如果你对建筑 / 摄影感兴趣, 比国金中心更值得专程。打车 25 分钟。</div>
-    </div>
-    <div class="bonus-card">
-      <div class="b-name">渔人码头 / 后湖艺术区</div>
-      <div class="b-desc">长沙小众艺术区, 文创园 + 独立工作室 + 江边视野。比文和友真实, 适合喜欢逛"未完成"街区的宝子。</div>
-    </div>
-  </div>
-</section>
-
-<!-- 速查表 -->
-<section>
-  <h2>📋 30 选速查表 v2 <span class="h2-sub">已标注剔除项</span></h2>
-  <table class="summary-table">
-    <thead>
-      <tr><th>#</th><th>地点</th><th>分类</th><th>等级</th><th>是否值得去</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td>荷花池生鲜市场</td><td>早市</td><td>A</td><td class="verdict-yes">值得 (看)</td></tr>
-      <tr><td>2</td><td>上碧湘街 + 南门口</td><td>市井</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>3</td><td>夏记粉店</td><td>米粉</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>4</td><td>肆姐面粉</td><td>米粉</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>5</td><td>公交新村粉店</td><td>米粉</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>6</td><td>黑色经典臭豆腐</td><td>小吃</td><td>A</td><td class="verdict-mid">顺路吃</td></tr>
-      <tr><td>7</td><td>天宝兄弟龙虾</td><td>夜宵</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>8</td><td>娟娟餐馆</td><td>苍蝇馆</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>9</td><td>鲁哥饭店</td><td>苍蝇馆</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr class="row-excluded"><td>10</td><td>盟重烧烤</td><td>夜宵</td><td>—</td><td class="verdict-no">已剔除 (踩雷)</td></tr>
-      <tr class="row-excluded"><td>11</td><td>文和友龙虾馆</td><td>网红</td><td>—</td><td class="verdict-no">已剔除 (去过)</td></tr>
-      <tr><td>12</td><td>巴赫西点</td><td>烘焙</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>13</td><td>茶颜悦色 黄兴中路店</td><td>奶茶</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>14</td><td>茶颜悦色 人民东路店</td><td>奶茶</td><td>C</td><td class="verdict-no">重复, 跳</td></tr>
-      <tr><td>15</td><td>WITH KAFE</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
-      <tr><td>16</td><td>浅印咖啡馆</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
-      <tr><td>17</td><td>Double L Cafe</td><td>咖啡</td><td>?</td><td class="verdict-mid">先查评价</td></tr>
-      <tr><td>18</td><td>潮宗街</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>19</td><td>苏家巷</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>20</td><td>丰盈西里</td><td>Citywalk</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>21</td><td>太平老街</td><td>老街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
-      <tr><td>22</td><td>坡子街 + 火宫殿</td><td>老街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
-      <tr><td>23</td><td>黄兴南路步行街</td><td>商业街</td><td>B</td><td class="verdict-mid">顺路</td></tr>
-      <tr><td>24</td><td>开福寺</td><td>古刹</td><td>S</td><td class="verdict-yes">闭眼冲</td></tr>
-      <tr><td>25</td><td>铁炉寺</td><td>古刹</td><td>A</td><td class="verdict-yes">值得 (远)</td></tr>
-      <tr><td>26</td><td>松柏寺</td><td>古刹</td><td>?</td><td class="verdict-no">存疑, 换</td></tr>
-      <tr><td>27</td><td>金色印象足浴</td><td>放松</td><td>A</td><td class="verdict-yes">值得</td></tr>
-      <tr><td>28</td><td>白沙古井</td><td>地标</td><td>B</td><td class="verdict-mid">看 20 分钟</td></tr>
-      <tr><td>29</td><td>五一广场</td><td>住宿地</td><td>B</td><td class="verdict-no">凑数</td></tr>
-      <tr><td>30</td><td>万达广场 (中山路)</td><td>商场</td><td>C</td><td class="verdict-no">地名存疑</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- 动线建议 v2 -->
-<section>
-  <h2>🗺️ 两日动线 v2 <span class="h2-sub">已避开省博/岳麓山/橘子洲</span></h2>
-  <div class="route">
-
-    <div class="route-day">
-      <h4>Day 1 · 老长沙市井 + 真烧烤夜宵</h4>
-      <ul class="timeline">
-        <li><span class="t-time">07:30</span>夏记粉店嗦肉丝肉丸粉 (¥15)</li>
-        <li><span class="t-time">09:00</span>开福寺烧香 + 吃 ¥10 素面</li>
-        <li><span class="t-time">11:00</span>潮宗街 → 苏家巷 → 丰盈西里 Citywalk, 一杯<strong>鸳央咖啡</strong></li>
-        <li><span class="t-time">13:30</span>娟娟餐馆吃午饭 (告诉老板娘"微辣")</li>
-        <li><span class="t-time">15:30</span>巴赫西点带个法棍 / 碱水结回酒店</li>
-        <li><span class="t-time">16:30</span>回酒店午休 (重要, 晚上要熬)</li>
-        <li><span class="t-time">18:00</span>IFS 顶楼 KAWS 拍照 + 看长沙天际线日落</li>
-        <li><span class="t-time">19:30</span>天宝兄弟杀小龙虾</li>
-        <li><span class="t-time">22:00</span>化龙池 / 都正街小酒馆听民谣</li>
-      </ul>
-    </div>
-
-    <div class="route-day">
-      <h4>Day 2 · 慢节奏 + 替补烧烤雪耻</h4>
-      <ul class="timeline">
-        <li><span class="t-time">08:30</span>公交新村粉店换种粉嗦 (和 Day 1 的夏记对比)</li>
-        <li><span class="t-time">10:00</span>南门口扫荡: 上碧湘街 + 德园包子 + 四娭毑臭豆腐</li>
-        <li><span class="t-time">12:00</span>鲁哥饭店吃午饭 (咸蛋黄茄子 + 白辣椒炒肉)</li>
-        <li><span class="t-time">14:00</span>白沙古井 20 分钟打卡 + 周边茶馆喝杯本地绿茶</li>
-        <li><span class="t-time">15:30</span>梅溪湖艺术中心看扎哈建筑 (或后湖艺术区)</li>
-        <li><span class="t-time">18:00</span>金色印象足浴 + 自助餐 (躺到 21:00)</li>
-        <li><span class="t-time">21:30</span><strong>烧烤雪耻局: 五娭毑 / 哥老倌 / 任氏任选一家</strong></li>
-        <li><span class="t-time">23:30</span>蔡锷北路宵夜街溜达, 看本地夜江湖</li>
-      </ul>
-    </div>
-
-    <div class="route-day">
-      <h4>Day 3 (机动) · 偏远 / 小众补漏</h4>
-      <ul class="timeline">
-        <li><span class="t-time">08:30</span>肆姐面粉牛肉粉 (粉店三连最后一发)</li>
-        <li><span class="t-time">10:00</span>铁炉寺 (清幽 1.5 小时)——如果时间紧可跳</li>
-        <li><span class="t-time">13:00</span>火宫殿小吃拼盘 (赶时间用)</li>
-        <li><span class="t-time">15:00</span>太平老街深巷茶室喝个下午茶</li>
-        <li><span class="t-time">17:00</span>返程</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<div class="footer">
-  ✏️ v2 由本地佬 + 老吃家 + 运营 brain 三合一手写, 已根据宝子反馈剔除踩雷 / 已去店。<br>
-  地点信息以你出发前用地图实时查到的为准, 长沙小店关门 / 搬家很常 (尤其独立咖啡馆和老烧烤店分店)。<br>
-  报告日期: 2026-05-26 v2 · 祝宝子在长沙吃到嗨 🌶️
-</div>
-
-</div>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
